@@ -1,0 +1,7 @@
+name: My-Niri-Image
+base_image: ghcr.io/ublue-os/bluefin:stable
+
+defaults:
+terra: true
+dnf_cache: true
+lint: true

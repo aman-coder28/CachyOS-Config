@@ -1,0 +1,9 @@
+description: GUI Programs
+packages:
+  - ghostty
+  - kde-connect
+  - helium-browser-bin
+  - xhost
+  - gparted
+  - zed
+  - codium

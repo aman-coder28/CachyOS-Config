@@ -1,0 +1,12 @@
+description: Dev Tools Packages
+packages:
+  - git
+  - gh
+  - ghostty
+  - go
+  - gopls
+  - zig
+  - rust
+  - cargo
+  - rust-analyzer
+  - neovim
