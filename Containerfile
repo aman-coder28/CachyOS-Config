@@ -39,6 +39,4 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
  	@virtualization \
  	&& dnf5 clean all
 
-CMD ["/sbin/init"]
-
 RUN bootc container lint
