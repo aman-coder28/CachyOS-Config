@@ -47,7 +47,6 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
  	xwayland-satellite \
  	mate-polkit \
  	swayidle \
- 	noctalia \
  	kitty \
  	keyd 
 
