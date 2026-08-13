@@ -9,8 +9,7 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
 	--mount=type=tmpfs,target=/tmp \
 	 curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f44/anda/terra/release/terra.repo \ 
 	-o /etc/yum.repos.d/terra.repo && \
-	dnf5 install -y --nogpgcheck terra-release && \ 
-	dnf5 clean all
+	dnf `install -y --nogpgcheck terra-release
 
 # Dev Tools Packages 
 RUN --mount=type=cache,dst=/var/cache/libdnf5 \
@@ -24,8 +23,7 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
  	rust \
  	cargo \
  	rust-analyzer \
- 	neovim \
- 	&& dnf clean all
+ 	neovim 
 
 # GUI Programs 
 RUN --mount=type=cache,dst=/var/cache/libdnf5 \
@@ -38,7 +36,19 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
  	xhost \
  	zed \
  	codium \
- 	@virtualization \
- 	&& dnf clean all
+ 	@virtualization 
+
+# Windows Manager 
+RUN --mount=type=cache,dst=/var/cache/libdnf5 \
+	--mount=type=tmpfs,target=/boot \
+	--mount=type=tmpfs,target=/tmp \
+	dnf install -y --setopt=install_weak_deps=0 niri \
+ 	noctalia \
+ 	xwayland-satellite \
+ 	mate-polkit \
+ 	swayidle \
+ 	noctalia \
+ 	kitty \
+ 	keyd 
 
 RUN bootc container lint

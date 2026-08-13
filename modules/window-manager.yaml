@@ -1,0 +1,11 @@
+description: Windows Manager
+
+packages:
+  - niri
+  - noctalia
+  - xwayland-satellite
+  - mate-polkit
+  - swayidle
+  - noctalia
+  - kitty
+  - keyd
