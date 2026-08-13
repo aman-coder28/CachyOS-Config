@@ -6,6 +6,5 @@ packages:
   - xwayland-satellite
   - mate-polkit
   - swayidle
-  - noctalia
   - kitty
   - keyd
