@@ -4,4 +4,4 @@ base_image: ghcr.io/ublue-os/bluefin:stable
 defaults:
 terra_repo: true
 lint: true
-dnf_cache: true
+weak_deps: false
