@@ -7,4 +7,5 @@ packages:
   - xhost
   - zed
   - codium
-  - "@virtualization"
+  - gnome-system-monitor
+  # - "@virtualization"

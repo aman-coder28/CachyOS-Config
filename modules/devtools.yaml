@@ -2,7 +2,7 @@ description: Dev Tools Packages
 packages:
   - git
   - gh
-  - go
+  - golang
   - gopls
   - zig
   - rust
