@@ -4,12 +4,25 @@ set -euo pipefail
 # Enable Terra Repos
 curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f44/anda/terra/release/terra.repo \
 	-o /etc/yum.repos.d/terra.repo && \
-	dnf install -y --nogpgcheck terra-release 
+	dnf install -y --nogpgcheck terra-release
+
+# Packages to be Removed from the base image
+rm -f /usr/share/applications/waydroid-container-restart.desktop
+rm -f /usr/libexec/waydroid-container-restart \
+  /usr/libexec/waydroid-container-start \
+  /usr/libexec/waydroid-container-stop \
+  /usr/libexec/waydroid-fix-controllers
+rm -rf /usr/share/applications/Waydroid
+
+dnf remove -y waydroid \
+ 	waydroid-selinux \
+ 	lutris \
+ 	mangohud
 
 # Disable Installing Weak Depedencies
 dnf config-manager setopt install_weak_deps=0
 
-# Dev Tools Packages 
+# Dev Tools Packages
 dnf install -y git \
  	gh \
  	golang \
@@ -20,7 +33,7 @@ dnf install -y git \
  	rust-analyzer \
  	neovim
 
-# GUI Programs 
+# GUI Programs
 dnf install -y ghostty \
  	kde-connect \
  	helium-browser-bin \
@@ -30,7 +43,7 @@ dnf install -y ghostty \
  	codium \
  	gnome-system-monitor
 
-# Windows Manager 
+# Windows Manager
 dnf install -y niri \
  	noctalia \
  	xwayland-satellite \
