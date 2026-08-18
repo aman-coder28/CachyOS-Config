@@ -1,7 +1,7 @@
 name: My-Niri-Image
-base_image: ghcr.io/ublue-os/bluefin:stable
+base_image: ghcr.io/ublue-os/bazzite-gnome:stable
 
 defaults:
-terra_repo: true
-lint: true
-weak_deps: false
+  terra_repo: true
+  lint: true
+  weak_deps: false
