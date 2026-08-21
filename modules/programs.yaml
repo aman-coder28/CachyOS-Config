@@ -4,8 +4,8 @@ packages:
   - kde-connect
   - helium-browser-bin
   - gparted
-  - xhost
   - zed
   - codium
   - gnome-system-monitor
+  - btop
   # - "@virtualization"

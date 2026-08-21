@@ -7,5 +7,7 @@ packages:
   - mate-polkit
   - swayidle
   - kitty
-  - keyd
+  - wl-clipboard
+  - cliphist
   - nwg-look
+  - xdg-desktop-portal-gtk
