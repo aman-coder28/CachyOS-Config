@@ -2,9 +2,8 @@
 set -euo pipefail
 
 # Enable Terra Repos
-curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f44/anda/terra/release/terra.repo \
-	-o /etc/yum.repos.d/terra.repo && \
-	dnf install -y --nogpgcheck terra-release
+rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-terra44
+sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/terra.repo 
 
 # Packages to be Removed from the base image
 rm -f /usr/share/applications/waydroid-container-restart.desktop
@@ -17,12 +16,14 @@ rm -rf /usr/share/applications/Waydroid
 dnf remove -y waydroid \
  	waydroid-selinux \
  	lutris \
- 	mangohud
+ 	mangohud \
+ 	cardwire \
+ 	input-remapper
 
 # Disable Installing Weak Depedencies
 dnf config-manager setopt install_weak_deps=0
 
-# Dev Tools Packages
+# Dev Tools Packages 
 dnf install -y git \
  	gh \
  	golang \
@@ -33,24 +34,36 @@ dnf install -y git \
  	rust-analyzer \
  	neovim
 
-# GUI Programs
+# GUI Programs 
 dnf install -y ghostty \
  	kde-connect \
  	helium-browser-bin \
- 	gparted \
- 	xhost \
  	zed \
  	codium \
- 	gnome-system-monitor
+ 	btop
 
-# Windows Manager
+# Virtualization packages 
+dnf install -y qemu-system-x86 \
+ 	qemu-img \
+ 	swtpm \
+ 	edk2-ovmf \
+ 	virt-viewer \
+ 	passt \
+ 	libvirt-daemon-kvm \
+ 	libvirt-daemon-config-network \
+ 	virt-manager \
+ 	virt-install
+
+# Windows Manager 
 dnf install -y niri \
  	noctalia \
  	xwayland-satellite \
  	mate-polkit \
  	swayidle \
  	kitty \
- 	keyd \
- 	nwg-look
+ 	wl-clipboard \
+ 	cliphist \
+ 	nwg-look \
+ 	xdg-desktop-portal-gtk
 
 bootc container lint

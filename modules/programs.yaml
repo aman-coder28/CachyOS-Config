@@ -3,9 +3,8 @@ packages:
   - ghostty
   - kde-connect
   - helium-browser-bin
-  - gparted
+  # - gparted
   - zed
   - codium
-  - gnome-system-monitor
+  # - gnome-system-monitor
   - btop
-  # - "@virtualization"

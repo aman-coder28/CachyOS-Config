@@ -9,4 +9,3 @@ packages:
   - cargo
   - rust-analyzer
   - neovim
-  - jetbrains-mono-fonts
