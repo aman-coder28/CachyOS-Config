@@ -13,12 +13,10 @@ rm -f /usr/libexec/waydroid-container-restart \
   /usr/libexec/waydroid-fix-controllers
 rm -rf /usr/share/applications/Waydroid
 
-dnf remove -y waydroid \
+dnf remove -y --noautoremove waydroid \
  	waydroid-selinux \
  	lutris \
- 	mangohud \
- 	cardwire \
- 	input-remapper
+ 	mangohud
 
 # Disable Installing Weak Depedencies
 dnf config-manager setopt install_weak_deps=0
@@ -39,6 +37,7 @@ dnf install -y ghostty \
  	kde-connect \
  	helium-browser-bin \
  	zed \
+ 	gparted \
  	codium \
  	btop
 
@@ -64,6 +63,11 @@ dnf install -y niri \
  	wl-clipboard \
  	cliphist \
  	nwg-look \
- 	xdg-desktop-portal-gtk
+ 	xdg-desktop-portal-gtk \
+ 	sddm \
+ 	sddm-breeze \
+ 	qt5-qtgraphicaleffects \
+ 	qt5-qtquickcontrols2 \
+ 	plasma-workspace
 
 bootc container lint

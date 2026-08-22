@@ -3,8 +3,7 @@ packages:
   - ghostty
   - kde-connect
   - helium-browser-bin
-  # - gparted
   - zed
+  - gparted
   - codium
-  # - gnome-system-monitor
   - btop

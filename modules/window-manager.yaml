@@ -11,3 +11,8 @@ packages:
   - cliphist
   - nwg-look
   - xdg-desktop-portal-gtk
+  - sddm
+  - sddm-breeze
+  - qt5-qtgraphicaleffects
+  - qt5-qtquickcontrols2
+  - plasma-workspace

@@ -4,8 +4,6 @@ packages:
   - waydroid-selinux
   - lutris
   - mangohud
-  - cardwire
-  - input-remapper
 
 scripts: |
   rm -f /usr/share/applications/waydroid-container-restart.desktop
