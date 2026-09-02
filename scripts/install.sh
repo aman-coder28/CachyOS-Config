@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Dev Tools Packages 
 sudo rum install -y git \
@@ -42,7 +43,7 @@ sudo rum install -y niri \
  	xdg-desktop-portal-umbriel-nightly
 
 # Flatpak Apps
-flatpak install flathub ai.opencode.opencode \
+flatpak install -y flathub ai.opencode.opencode \
  	com.belmoussaoui.Authenticator \
  	com.brave.Browser \
  	com.discordapp.Discord \
