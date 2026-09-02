@@ -5,10 +5,14 @@ files = ["noctalia.toml"]
 workspaces = 5
 
 [general]
-autostart = ["noctalia", "wl-paste --type text --watch cliphist store", "wl-paste --type image --watch cliphist store"]
-xwayland = true                # requires restart to change
-show_cheatsheet = false         # show keybinds overlay on startup
-focus_on_activate = false      # unsolicited requests cannot add focus; trusted launches may still focus
+autostart = [
+  "noctalia",
+  "wl-paste --type text --watch cliphist store",
+  "wl-paste --type image --watch cliphist store",
+]
+xwayland = true # requires restart to change
+show_cheatsheet = false # show keybinds overlay on startup
+focus_on_activate = false # unsolicited requests cannot add focus; trusted launches may still focus
 honor_restored_maximize = true # let apps restore their saved maximized state
 
 [workspaces]
@@ -19,24 +23,24 @@ empty_above = false
 
 [animation]
 enabled = true
-duration_ms = 200              # 1-10000
+duration_ms = 200 # 1-10000
 curve = "easeout"
 
 [animation.windows_in]
 enabled = true
 duration_ms = 150
 curve = "easeout"
-style = "popin"                # popin, zoom, slide, fade, none
-scale = 0.85                   # 0.1-1.0, used by popin
+style = "popin" # popin, zoom, slide, fade, none
+scale = 0.85 # 0.1-1.0, used by popin
 
 [animation.windows_out]
 enabled = true
 duration_ms = 150
 curve = "easeout"
-style = "fade"                 # fade, slide
+style = "fade" # fade, slide
 
 [animation.windows_move]
-enabled = true                     # window move, resize, and floating maximize transitions
+enabled = true # window move, resize, and floating maximize transitions
 duration_ms = 250
 curve = "snappy"
 
@@ -54,9 +58,9 @@ curve = "easeout"
 enabled = false
 duration_ms = 250
 curve = "easeout"
-dim = 0.5                      # 0.0-1.0
+dim = 0.5 # 0.0-1.0
 blur = false
-scale = 0.0                    # 0 preserves the window geometry
+scale = 0.0 # 0 preserves the window geometry
 maximize = false
 fullscreen = false
 
@@ -69,7 +73,7 @@ curve = "easeout"
 enabled = false
 duration_ms = 250
 curve = "easeout"
-dim = 0.0                      # 0.0-1.0
+dim = 0.0 # 0.0-1.0
 
 [animation.layers]
 enabled = false
@@ -79,46 +83,39 @@ curve = "easeout"
 # Appearance -----------------------------------------------------------------
 
 [appearance]
-prefer_no_csd = false           # false lets newly started apps draw their own decorations
-border_width = 0              # 0-100
-outer_border_width = 0         # 0-100
-corner_radius = 12           # 0-100, radius of the final decorated outer edge
+prefer_no_csd = false # false lets newly started apps draw their own decorations
+border_width = 0 # 0-100
+outer_border_width = 0 # 0-100
+corner_radius = 12 # 0-100, radius of the final decorated outer edge
 drag_opacity = 0.75
 
 [appearance.blur]
 enabled = true
 optimized = true
-passes = 3                     # 0-8
-radius = 3                     # 0-100
-noise = 0.02                   # 0.0-1.0
-brightness = 0.9               # 0.0-2.0
-contrast = 0.9                 # 0.0-2.0
-saturation = 1.1               # 0.0-2.0
+passes = 3 # 0-8
+radius = 3 # 0-100
+noise = 0.02 # 0.0-1.0
+brightness = 0.9 # 0.0-2.0
+contrast = 0.9 # 0.0-2.0
+saturation = 1.1 # 0.0-2.0
 
 [appearance.shadow]
 enabled = true
-softness = 10                  # 0-200, 0 = hard edge
-offset_x = 2                   # -200 to 200
+softness = 10 # 0-200, 0 = hard edge
+offset_x = 2 # -200 to 200
 offset_y = 2
 color = "#0000007F"
 
 # Overview -------------------------------------------------------------------
 
 [overview]
-zoom = 0.5                     # 0.1-0.75
-# Pinned windows stay hidden until overview closes; visible scratchpads are dismissed.
-# background_blur = true        # blur the wallpaper while the overview is open
-# background_tint = "#10101430"
-# workspace_background = "#00000044" # set alpha to FF for an opaque background
-# shortcuts = true
-# shortcut_keys = "1234567890" # favorite keys in preference order
-# badge_color = "#7AA3FFFF"   # defaults to colors.accent_primary
+zoom = 0.5
 
 # Hot corners ---------------------------------------------------------------
 
 [hot_corners.top_left]
 enabled = true
-delay_ms = 500                # 0-10000, 0 activates immediately
+delay_ms = 500 # 0-10000, 0 activates immediately
 action = "overview-open"
 
 [hot_corners.top_right]
@@ -139,15 +136,12 @@ action = "spawn:notify-send 'Bottom right'"
 # Layout ---------------------------------------------------------------------
 
 [layout]
-mode = "scrolling"             # "scrolling", "dwindle", or "master"
-# Inspect every workspace's effective mode with `umbriel workspaces --json`.
-gap = 2                        # 0-500
+mode = "scrolling" # "scrolling", "dwindle", or "master"
+gap = 2 # 0-500
 width_presets = [0.333, 0.5, 1.0] # width and height cycling, tiled and floating alike
 
 [layout.struts]
-# Signed logical pixels around normal tiled layouts, applied after panels.
-# Negative values expand the tiled area beyond those bounds.
-left = 0                       # -65535 to 65535
+left = 0 # -65535 to 65535
 right = 0
 top = 0
 bottom = 0
@@ -155,82 +149,49 @@ bottom = 0
 [layout.scrolling]
 # Vertical workspaces stack horizontal lanes from top to bottom.
 # direction = "horizontal"
-default_width_fraction = 1.0  # remove to let clients choose their initial width
+default_width_fraction = 1.0 # remove to let clients choose their initial width
 # A matching output may override this initial-only value for all its workspaces.
-center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
+center_underfull_strip = true # center the strip whenever it is narrower than the viewport
 center_focused = false # always center the focused column
 expand_single_column = true # fill lone column to viewport width
 
-
 [layout.dwindle]
 [layout.master]
-position = "left"              # "left" or "right"
-default_width_fraction = 0.55  # 0.1-0.9
-new_on_top = true             # place new windows at the top of the stack
-
-# Outputs (see docs/user/outputs.md) ----------------------------------------
-# Named by connector, or by the `Config name` printed by `umbriel outputs`.
-# The monitor form follows the display between machines and ports:
-# [output."Some Make Some Model ABC123"]
-# [output."DP-1"]
-# mode = "2560x1440@144"
-# position = [0, 0]             # logical top-left; omit for automatic placement
-# scale = 1.25                  # divides the mode size in layout coordinates
-# vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-# tearing = true                 # allow eligible fullscreen clients to request tearing
-# direct_scanout = true           # false forces composition on this output
-# hdr = "auto"                  # "off", "on", metadata-driven "auto", or any-app "fullscreen"
-# sdr_white = 203                # SDR reference white in cd/m2 while HDR is active
-# enabled = true                # false removes it; re-enabling restores windows, layout, active workspace, and taskbar entries
-# Dynamic workspaces are the default; use a count or name list for static workspaces.
-# workspaces = 5
-# New scrolling columns on this output use this value. Reloading it does not
-# resize existing columns, and a more specific workspace rule still wins.
-# [output.DP-1.layout.scrolling]
-# default_width_fraction = 0.4
+position = "left" # "left" or "right"
+default_width_fraction = 0.55 # 0.1-0.9
+new_on_top = true # place new windows at the top of the stack
 
 # Input ----------------------------------------------------------------------
 
 [input]
-middle_click_paste = true      # primary-selection clipboard, applies on reload
+middle_click_paste = true # primary-selection clipboard, applies on reload
 
 [input.keyboard]
-# ASCII keybind fallback uses only layouts listed for this keyboard; a single
-# non-Latin layout has no implicit Latin fallback.
-layout = ""                    # "us,de" loads both; switch with keyboard-layout-next
+layout = "" # "us,de" loads both; switch with keyboard-layout-next
 variant = ""
-options = ""                   # XKB options, e.g. "grp:alt_shift_toggle"
-repeat_rate = 25               # 0-1000 Hz
-repeat_delay = 600             # 0-10000 ms
+options = "" # XKB options, e.g. "grp:alt_shift_toggle"
+repeat_rate = 25 # 0-1000 Hz
+repeat_delay = 600 # 0-10000 ms
 numlock_toggle = true # true enables NumLock when a keyboard connects; false leaves it off
-track_layout = "global"        # "global", or "window" to track the layout per surface
+track_layout = "global" # "global", or "window" to track the layout per surface
 
 [input.touchpad]
-tap = true                      # enabled by default; false disables tap-to-click
-# natural_scroll = true
-# accel_profile = "adaptive"    # "flat", "adaptive", or "custom <step> <points...>"
-# sensitivity = 0.5             # pointer speed, -1.0 to 1.0
-# scroll_factor = 1.5           # touchpad scroll speed, 0.1 to 10.0
-# disable_while_typing = true   # omitted preserves the device's libinput default
-# disable_on_external_mouse = true  # disable the touchpad while an external mouse is connected
+tap = true
 
-[input.mouse]
-# natural_scroll = false
-# accel_profile = "flat"       # omitted preserves the device's libinput default
-sensitivity = 0.0              # pointer speed, -1.0 to 1.0
-scroll_wheel_step = 60         # 1-1000
-
+[input.mouse] # omitted preserves the device's libinput default
+sensitivity = 0.0 # pointer speed, -1.0 to 1.0
+scroll_wheel_step = 60 # 1-1000
 
 [input.tablet]
-enabled = true                 # false disables the tablet and its pads
+enabled = false # false disables the tablet and its pads
 
 [input.cursor]
 theme = "Niko"
-size = 19                      # 1-512
-hardware_cursor = true         # false forces software cursor composition
-follows_focus = true          # warp to windows selected by focus navigation
-hide_when_typing = false       # hide after typing unless a pointer button is held
-hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
+size = 19 # 1-512
+hardware_cursor = true # false forces software cursor composition
+follows_focus = true # warp to windows selected by focus navigation
+hide_when_typing = false # hide after typing unless a pointer button is held
+hide_timeout_ms = 0 # 0-3600000, 0 disables hiding
 
 [input.focus]
 follows_mouse = true
@@ -290,19 +251,16 @@ follows_mouse = true
 "Ctrl+Print" = "spawn:grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"
 
 # --- Media & Volume (Allow when locked) ---
-"XF86AudioRaiseVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0", allow_when_locked = true }
-"XF86AudioLowerVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-", allow_when_locked = true }
-"XF86AudioMute" = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", allow_when_locked = true }
-"XF86AudioMicMute" = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true }
+"XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+"
+"XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"
+"Mod+XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
-"XF86AudioPlay" = { action = "spawn:playerctl play-pause", allow_when_locked = true }
-"XF86AudioStop" = { action = "spawn:playerctl stop", allow_when_locked = true }
-"XF86AudioPrev" = { action = "spawn:playerctl previous", allow_when_locked = true }
-"XF86AudioNext" = { action = "spawn:playerctl next", allow_when_locked = true }
+"XF86AudioPlay" = "spawn:playerctl play-pause"
+"XF86AudioNext" = "spawn:playerctl next"
+"XF86AudioPrev" = "spawn:playerctl previous"
 
-# --- Brightness (Allow when locked) ---
-"XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up", allow_when_locked = true }
-"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
+"XF86MonBrightnessUp" = "spawn:brightnessctl set 10%"
+"XF86MonBrightnessDown" = "spawn:brightnessctl set 10%-"
 
 # Window rules (see docs/user/window-rules.md) ---------------------------
 # Blur all windows
@@ -336,15 +294,7 @@ default_size = [646, 474]
 # Layer rules (see docs/user/layer-rules.md) ---------------------------
 
 [[layer_rule]]
-match.namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
 blur = true
 blur_ignore_alpha = 0.5
 blur_optimized = false
-
-# Security context rules (see docs/user/security.md) ----------------------
-
-# Grant a sandboxed clipboard manager the data-control protocol
-# [[security_context_rule]]
-# match.sandbox_engine = 'org\.flatpak'
-# match.app_id = 'org\.example\.ClipboardManager'
-# allow_globals = ["ext_data_control_manager_v1"]
