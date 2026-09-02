@@ -18,7 +18,7 @@ packages:
   - org.gnome.Mahjongg
   - org.gnome.gitlab.wwarner.Solitaire
   - page.tesk.Refine
-  - xyz.riothedev.emojif
+  - xyz.riothedev.emojify
   - org.videolan.VLC
   - org.localsend.localsend_app
   - org.pulseaudio.pavucontrol
