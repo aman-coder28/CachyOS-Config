@@ -10,9 +10,14 @@ packages:
   - wl-clipboard
   - cliphist
   - nwg-look
+  - grim
+  - slurp
+  - swappy
   - xdg-desktop-portal-gtk
-  - sddm
-  - sddm-breeze
-  - qt5-qtgraphicaleffects
-  - qt5-qtquickcontrols2
-  - plasma-workspace
+  - umbriel-nightly
+  - xdg-desktop-portal-umbriel-nightly
+  # - sddm
+  # - sddm-breeze
+  # - qt5-qtgraphicaleffects
+  # - qt5-qtquickcontrols2
+  # - plasma-workspace

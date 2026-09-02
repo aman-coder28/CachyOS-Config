@@ -14,7 +14,7 @@ input {
 
 /-output "eDP-1" {
     mode "1920x1080@120.030"
-    scale 2
+    scale 1
     transform "normal"
     position x=1280 y=0
 }
@@ -58,7 +58,7 @@ animations { }
 
 cursor {
     xcursor-theme "macOS" // Niko, Adwaita, macOS-White, macOS
-    xcursor-size 31
+    xcursor-size 30
 }   
 
 window-rule {
@@ -111,10 +111,10 @@ binds {
     Mod+Z { spawn "zed"; }
     Mod+B { spawn "helium-browser-bin"; }
     Mod+K { spawn "codium"; }
-    Mod+M { spawn-sh "flatpak run net.nokyan.Resources"; }
+    Mod+M { spawn "gnome-system-monitor"; }
     Alt+V { spawn-sh "flatpak run xyz.riothedev.emojify"; }
-    Mod+T { spawn-sh "flatpak run org.gnome.TextEditor"; }
-    Mod+L { spawn-sh "flatpak run org.libreoffice.LibreOffice"; }
+    Mod+T { spawn "gnome-text-editor"; }
+    Mod+L { spawn "libreoffice"; }
     Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+H { spawn-sh "noctalia msg panel-toggle clipboard"; }

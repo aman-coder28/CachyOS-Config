@@ -1,0 +1,20 @@
+[colors]
+background = "#1f1f1fF0"
+text_primary = "#e2e2e2FF"
+text_muted = "#c6c6c6FF"
+accent_primary = "#aac7ffFF"
+accent_secondary = "#bec6dcFF"
+warning = "#ddbce0FF"
+error = "#ffb4abFF"
+
+[appearance]
+border_focused = "#aac7ffFF"
+border_unfocused = "#474747FF"
+scratchpad_border_focused = "#ddbce0FF"
+scratchpad_border_unfocused = "#573e5cFF"
+outer_border_color = "#131313FF"
+insert_hint_color = "#ddbce080"
+backdrop_color = "#474747FF"
+
+[overview]
+background_tint = "#13131330"

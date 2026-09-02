@@ -1,0 +1,25 @@
+OpenCode	ai.opencode.opencode	1.18.8	stable	system
+Authenticator	com.belmoussaoui.Authenticator	4.6.2	stable	system
+Brave	com.brave.Browser	1.94.117	stable	system
+Discord	com.discordapp.Discord	1.0.155	stable	system
+Gapless	com.github.neithern.g4music	4.6.2	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.4.1	stable	system
+Extension Manager	com.mattjakeman.ExtensionManager	0.6.5	stable	system
+Proton VPN	com.protonvpn.www	4.18.0	stable	system
+ProtonPlus	com.vysp3r.ProtonPlus	0.6.4	stable	system
+Amberol	io.bassi.Amberol	2026.1	stable	system
+Bazaar	io.github.kolunmi.Bazaar	0.9.4	stable	system
+GDM Settings	io.github.realmazharhussain.GdmSettings	5.0	stable	system
+Proton Pass	me.proton.Pass	1.39.1	stable	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-25.08.16	25.08	system
+Mesa	org.freedesktop.Platform.GL.default	26.1.6	25.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	26.1.6	25.08-extra	system
+Intel VAAPI driver	org.freedesktop.Platform.VAAPI.Intel		25.08	system
+Codecs Extra Extension	org.freedesktop.Platform.codecs-extra		25.08-extra	system
+Extensions	org.gnome.Extensions	50.0	stable	system
+GNOME Application Platform version 49	org.gnome.Platform		49	system
+GNOME Application Platform version 50	org.gnome.Platform		50	system
+Solitaire	org.gnome.gitlab.wwarner.Solitaire	50.3	stable	system
+ONLYOFFICE Desktop Editors	org.onlyoffice.desktopeditors	9.4.0	stable	system
+Refine	page.tesk.Refine	0.8.0	stable	system
+Emojify	xyz.riothedev.emojify	1.3.3	stable	system

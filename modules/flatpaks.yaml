@@ -1,0 +1,27 @@
+description: Flatpak Apps
+packages:
+  - ai.opencode.opencode
+  - com.belmoussaoui.Authenticator
+  - com.brave.Browser
+  - com.discordapp.Discord
+  - com.github.neithern.g4music
+  - com.github.tchx84.Flatseal
+  - com.mattjakeman.ExtensionManager
+  - com.protonvpn.www
+  - com.vysp3r.ProtonPlus
+  - io.bassi.Amberol
+  - io.github.kolunmi.Bazaar
+  - io.github.realmazharhussain.GdmSettings
+  - me.proton.Pass
+  - org.gnome.Extensions
+  - org.gnome.Geary
+  - org.gnome.Mahjongg
+  - org.gnome.gitlab.wwarner.Solitaire
+  - page.tesk.Refine
+  - xyz.riothedev.emojif
+  - org.videolan.VLC
+  - org.localsend.localsend_app
+  - org.pulseaudio.pavucontrol
+  - io.github.peazip.PeaZip
+  - net.nokyan.Resources
+  - com.transmissionbt.Transmission

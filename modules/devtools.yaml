@@ -2,10 +2,17 @@ description: Dev Tools Packages
 packages:
   - git
   - gh
+  - glab
   - golang
   - gopls
-  - zig
-  - rust
-  - cargo
-  - rust-analyzer
-  - neovim
+  - bat
+  - eza
+  - atuin
+  - starship
+  - zoxide
+  - mise
+  # - zig
+  # - rust
+  # - cargo
+  # - rust-analyzer
+  # - neovim

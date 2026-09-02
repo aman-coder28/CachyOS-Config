@@ -1,33 +1,83 @@
 {
-  "minimap": {
-    "show": "auto"
-  },
-  "base_keymap": "VSCode",
-  "soft_wrap": "editor_width",
-  "terminal": {
-    "font_size": 16.0
-  },
-  "hard_tabs": true,
-  "tab_size": 2,
-  "icon_theme": "VSCode Icons for Zed (Dark)",
-  "disable_ai": true,
-  "toolbar": {
-    "quick_actions": false,
-    "breadcrumbs": false
-  },
-  "cli_default_open_behavior": "existing_window",
-  "git_panel": {
-    "dock": "left"
-  },
-  "project_panel": {
-    "hide_gitignore": true,
-    "hide_hidden": true,
-    "dock": "left"
-  },
-  "ui_font_family": "Adwaita Sans",
-  "ui_font_size": 16,
-  "buffer_font_size": 15.6,
-  "buffer_font_weight": 350,
-  "buffer_font_family" : "JetBrains Mono",
-  "theme": "Rosé Pine Moon",
+	"minimap": {
+		"show": "auto",
+	},
+	"base_keymap": "VSCode",
+	"soft_wrap": "editor_width",
+	"terminal": {
+		"font_size": 16.0,
+	},
+	"hard_tabs": true,
+	"tab_size": 2,
+	"icon_theme": "VSCode Icons for Zed (Dark)",
+	"disable_ai": true,
+	"toolbar": {
+		"quick_actions": false,
+		"breadcrumbs": false,
+	},
+	"cli_default_open_behavior": "existing_window",
+	"git_panel": {
+		"dock": "left",
+	},
+	"project_panel": {
+		"hide_gitignore": true,
+		"hide_hidden": true,
+		"dock": "left",
+	},
+	"ui_font_family": "Adwaita Sans",
+	"ui_font_size": 16,
+	"buffer_font_size": 15.6,
+	"buffer_font_weight": 350,
+	"buffer_font_family": "JetBrains Mono",
+	"theme": "Rosé Pine",
+	"format_on_save": "on",
+	"lsp": {
+		"oxlint": {
+			"initialization_options": {
+				"settings": {
+					"configPath": null,
+					"run": "onType",
+					"disableNestedConfig": false,
+					"fixKind": "safe_fix",
+					"unusedDisableDirectives": "deny",
+				},
+			},
+		},
+		"oxfmt": {
+			"initialization_options": {
+				"settings": {
+					"fmt.configPath": null,
+					"run": "onSave",
+				},
+			},
+		},
+	},
+	"languages": {
+		"TypeScript": {
+			"formatter": {
+				"language_server": {
+					"name": "oxfmt",
+				},
+			},
+			"language_servers": [
+				"tsgo",
+				"!vtsls",
+				"!typescript-language-server",
+				"...",
+			],
+		},
+		"TSX": {
+			"formatter": {
+				"language_server": {
+					"name": "oxfmt",
+				},
+			},
+			"language_servers": [
+				"tsgo",
+				"!vtsls",
+				"!typescript-language-server",
+				"...",
+			],
+		},
+	},
 }
