@@ -7,6 +7,5 @@ packages:
   - gparted
   - codium
   - btop
-  - kitty
   - gpu-screen-recorder
   - gpu-screen-recorder-ui
