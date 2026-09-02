@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Dev Tools Packages 
+# Dev Tools Packages
 sudo rum install -y git \
  	gh \
  	glab \
@@ -13,7 +13,7 @@ sudo rum install -y git \
  	zoxide \
  	mise
 
-# GUI Programs 
+# GUI Programs
 sudo rum install -y ghostty \
  	kde-connect \
  	helium-browser-bin \
@@ -21,11 +21,10 @@ sudo rum install -y ghostty \
  	gparted \
  	codium \
  	btop \
- 	kitty \
  	gpu-screen-recorder \
  	gpu-screen-recorder-ui
 
-# Windows Manager 
+# Windows Manager
 sudo rum install -y niri \
  	noctalia \
  	xwayland-satellite \
@@ -43,7 +42,7 @@ sudo rum install -y niri \
  	xdg-desktop-portal-umbriel-nightly
 
 # Flatpak Apps
-flatpak install flathub ai.opencode.opencode \
+flatpak install -y flathub ai.opencode.opencode \
  	com.belmoussaoui.Authenticator \
  	com.brave.Browser \
  	com.discordapp.Discord \
@@ -68,5 +67,4 @@ flatpak install flathub ai.opencode.opencode \
  	io.github.peazip.PeaZip \
  	net.nokyan.Resources \
  	com.transmissionbt.Transmission \
- 	com.brave.Browser \
  	org.libreoffice.LibreOffice
