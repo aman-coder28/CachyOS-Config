@@ -1,7 +1,5 @@
 name: My-Niri-Image
-base_image: ghcr.io/ublue-os/bazzite-gnome:stable
+base_image: RakuOS
 
 defaults:
   terra_repo: true
-  lint: true
-  weak_deps: false

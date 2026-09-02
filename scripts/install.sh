@@ -67,4 +67,6 @@ flatpak install flathub ai.opencode.opencode \
  	org.pulseaudio.pavucontrol \
  	io.github.peazip.PeaZip \
  	net.nokyan.Resources \
- 	com.transmissionbt.Transmission
+ 	com.transmissionbt.Transmission \
+ 	com.brave.Browser \
+ 	org.libreoffice.LibreOffice
