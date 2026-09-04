@@ -1,4 +1,40 @@
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  "minimap": {
+    "show": "auto"
+  },
+  "base_keymap": "VSCode",
+  "soft_wrap": "editor_width",
+  "terminal": {
+    "font_size": 16.0
+  },
+  "hard_tabs": true,
+  "tab_size": 2,
+  "icon_theme": "VSCode Icons for Zed (Dark)",
+  "disable_ai": true,
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "cli_default_open_behavior": "existing_window",
+  "git_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "hide_gitignore": true,
+    "hide_hidden": true,
+    "dock": "left"
+  },
+  "ui_font_family": "Adwaita Sans",
+  "ui_font_size": 16,
+  "buffer_font_size": 15.6,
+  "buffer_font_weight": 350,
+  "buffer_font_family" : "JetBrains Mono",
+  "theme": "Rosé Pine Moon",
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
 	"minimap": {
 		"show": "auto",
 	},
@@ -80,4 +116,8 @@
 			],
 		},
 	},
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 }

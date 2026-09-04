@@ -14,7 +14,15 @@ input {
 
 /-output "eDP-1" {
     mode "1920x1080@120.030"
+<<<<<<< HEAD
     scale 1
+=======
+<<<<<<< HEAD
+    scale 2
+=======
+    scale 1
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
     transform "normal"
     position x=1280 y=0
 }
@@ -58,7 +66,15 @@ animations { }
 
 cursor {
     xcursor-theme "macOS" // Niko, Adwaita, macOS-White, macOS
+<<<<<<< HEAD
     xcursor-size 30
+=======
+<<<<<<< HEAD
+    xcursor-size 31
+=======
+    xcursor-size 30
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 }   
 
 window-rule {
@@ -111,10 +127,23 @@ binds {
     Mod+Z { spawn "zed"; }
     Mod+B { spawn "helium-browser-bin"; }
     Mod+K { spawn "codium"; }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    Mod+M { spawn-sh "flatpak run net.nokyan.Resources"; }
+    Alt+V { spawn-sh "flatpak run xyz.riothedev.emojify"; }
+    Mod+T { spawn-sh "flatpak run org.gnome.TextEditor"; }
+    Mod+L { spawn-sh "flatpak run org.libreoffice.LibreOffice"; }
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
     Mod+M { spawn "gnome-system-monitor"; }
     Alt+V { spawn-sh "flatpak run xyz.riothedev.emojify"; }
     Mod+T { spawn "gnome-text-editor"; }
     Mod+L { spawn "libreoffice"; }
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
     Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+H { spawn-sh "noctalia msg panel-toggle clipboard"; }

@@ -7,5 +7,13 @@ packages:
   - gparted
   - codium
   - btop
+<<<<<<< HEAD
   - gpu-screen-recorder
   - gpu-screen-recorder-ui
+=======
+<<<<<<< HEAD
+=======
+  - gpu-screen-recorder
+  - gpu-screen-recorder-ui
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)

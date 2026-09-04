@@ -7,9 +7,21 @@ border = "surface_variant"
 border_width = 0.5
 capsule = true
 capsule_radius = 6
+<<<<<<< HEAD
 center = [ "workspaces", "media", "notifications" ]
 contact_shadow = true
 end = [ "tray", "bar", "widget", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
+=======
+<<<<<<< HEAD
+center = [ "workspaces", "notifications" ]
+contact_shadow = true
+end = [ "tray", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
+=======
+center = [ "workspaces", "media", "notifications" ]
+contact_shadow = true
+end = [ "tray", "bar", "widget", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 font_family = "Adwaita Sans"
 margin_ends = 0
 padding = 8
@@ -17,10 +29,19 @@ panel_overlap = 0
 radius = 0
 shadow = false
 start = [ "launcher", "active_window" ]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
 thickness = 33
 
 [battery]
 warning_threshold = 40
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
 [control_center.calendar]
 show_events_card = false
@@ -32,6 +53,15 @@ type = "wifi"
 type = "bluetooth"
 
 [[control_center.shortcuts]]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+type = "nightlight"
+
+[[control_center.shortcuts]]
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 type = "power_profile"
 
 [[control_center.shortcuts]]
@@ -40,9 +70,18 @@ type = "dark_mode"
 [[control_center.shortcuts]]
 type = "clipboard"
 
+<<<<<<< HEAD
 [[control_center.shortcuts]]
 type = "nightlight"
 
+=======
+<<<<<<< HEAD
+=======
+[[control_center.shortcuts]]
+type = "nightlight"
+
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 [desktop_widgets]
 schema_version = 2
 widget_order = [ "desktop-widget-0000000000000001" ]
@@ -67,6 +106,11 @@ widget_order = [ "desktop-widget-0000000000000001" ]
         background_padding = 20
         show_forecast = true
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
 [dock]
 auto_hide = true
 reserve_space = false
@@ -90,6 +134,10 @@ pre_action_fade_seconds = 10
     enabled = true
     timeout = 300.0
 
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 [location]
 auto_locate = true
 
@@ -97,6 +145,14 @@ auto_locate = true
 blurred_desktop = true
 
 [lockscreen_widgets]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
 enabled = true
 schema_version = 2
 widget_order = [
@@ -105,12 +161,21 @@ widget_order = [
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001"
 ]
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
     [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
     box_height = 196.0
     box_width = 635.0
@@ -138,6 +203,10 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
@@ -165,6 +234,16 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+[nightlight]
+enabled = true
+
+[shell]
+avatar_path = "/home/zeaman/Pictures/favicon.jpeg"
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 196.0
     box_width = 810.0
@@ -225,23 +304,48 @@ enabled = [ "oldirtty/color_picker", "cleboost/zed-provider", "yocraft/web-launc
 
 [shell]
 avatar_path = "/home/zeaman/Pictures/favicon.jpg"
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 font_family = "Adwaita Sans"
 niri_overview_type_to_launch_enabled = true
 password_style = "random"
 polkit_agent = true
+<<<<<<< HEAD
 screen_time_enabled = true
+=======
+<<<<<<< HEAD
+=======
+screen_time_enabled = true
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
     [shell.panel]
     clipboard_placement = "attached"
     launcher_placement = "attached"
 
 [theme]
+<<<<<<< HEAD
 builtin = "Noctalia"
+=======
+<<<<<<< HEAD
+=======
+builtin = "Noctalia"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "kcolorscheme", "kitty", "niri", "qt", "starship" ]
+    community_ids = [ "bat" ]
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
     builtin_ids = [
         "alacritty",
         "btop",
@@ -257,11 +361,27 @@ wallpaper_scheme = "m3-rainbow"
         "umbriel"
     ]
     community_ids = [ "libreoffice", "fastfetch", "hyprtoolkit" ]
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
 [wallpaper]
 directory = "/home/zeaman/Pictures/Wallpapers"
 
     [wallpaper.default]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
+
+    [wallpaper.last]
+    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
     path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
     [wallpaper.last]
@@ -275,6 +395,10 @@ anchor = true
 
 [widget.bar]
 type = "noctalia/umbriel-companion:bar"
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
 [widget.battery]
 display_mode = "graphic"
@@ -293,6 +417,13 @@ anchor = true
 capsule = true
 capsule_padding = 4
 capsule_radius = 5
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+custom_image = "/home/zeaman/Downloads/Bazzite_Logo.svg"
+scale = 1.45
+=======
+>>>>>>> 3095346 (Copy Dotfiles)
 custom_image = "/home/zeaman/Pictures/Fedora.svg"
 glyph = ""
 scale = 1.2
@@ -302,6 +433,10 @@ album_art_only = true
 hide_when_no_media = true
 max_length = 170
 title_scroll = "on_hover"
+<<<<<<< HEAD
+=======
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
 
 [widget.network]
 scale = 1.25
@@ -313,6 +448,15 @@ hide_passive = false
 [widget.volume]
 scale = 1.05
 show_label = false
+<<<<<<< HEAD
 
 [widget.widget]
 type = "oldirtty/color_picker:widget"
+=======
+<<<<<<< HEAD
+=======
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)

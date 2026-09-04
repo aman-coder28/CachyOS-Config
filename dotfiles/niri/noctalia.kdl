@@ -1,13 +1,29 @@
 layout {
 
     focus-ring {
+<<<<<<< HEAD
         active-color   "#aac7ff"
+=======
+<<<<<<< HEAD
+        active-color   "#84cfff"
+=======
+        active-color   "#aac7ff"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
         inactive-color "#131313"
         urgent-color   "#ffb4ab"
     }
 
     border {
+<<<<<<< HEAD
         active-color   "#aac7ff"
+=======
+<<<<<<< HEAD
+        active-color   "#84cfff"
+=======
+        active-color   "#aac7ff"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
         inactive-color "#131313"
         urgent-color   "#ffb4ab"
     }
@@ -17,19 +33,45 @@ layout {
     }
 
     tab-indicator {
+<<<<<<< HEAD
         active-color   "#aac7ff"
         inactive-color "#01458e"
+=======
+<<<<<<< HEAD
+        active-color   "#84cfff"
+        inactive-color "#004c6c"
+=======
+        active-color   "#aac7ff"
+        inactive-color "#01458e"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
         urgent-color   "#ffb4ab"
     }
 
     insert-hint {
+<<<<<<< HEAD
         color "#aac7ff80"
+=======
+<<<<<<< HEAD
+        color "#84cfff80"
+=======
+        color "#aac7ff80"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
     }
 }
 
 recent-windows {
     highlight {
+<<<<<<< HEAD
         active-color "#aac7ff"
+=======
+<<<<<<< HEAD
+        active-color "#84cfff"
+=======
+        active-color "#aac7ff"
+>>>>>>> bcd7ef6 (Copy Dotfiles)
+>>>>>>> 3095346 (Copy Dotfiles)
         urgent-color "#ffb4ab"
     }
 }
