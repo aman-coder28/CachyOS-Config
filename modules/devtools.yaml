@@ -1,19 +1,8 @@
 description: Dev Tools Packages
+
 packages:
   - git
   - gh
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  - golang
-  - gopls
-  - zig
-  - rust
-  - cargo
-  - rust-analyzer
-  - neovim
-=======
->>>>>>> 3095346 (Copy Dotfiles)
   - glab
   - golang
   - gopls
@@ -28,7 +17,3 @@ packages:
   # - cargo
   # - rust-analyzer
   # - neovim
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)

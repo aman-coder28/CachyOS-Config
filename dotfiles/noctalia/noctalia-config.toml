@@ -7,41 +7,31 @@ border = "surface_variant"
 border_width = 0.5
 capsule = true
 capsule_radius = 6
-<<<<<<< HEAD
-center = [ "workspaces", "media", "notifications" ]
+center = ["workspaces", "media", "notifications"]
 contact_shadow = true
-end = [ "tray", "bar", "widget", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
-=======
-<<<<<<< HEAD
-center = [ "workspaces", "notifications" ]
-contact_shadow = true
-end = [ "tray", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
-=======
-center = [ "workspaces", "media", "notifications" ]
-contact_shadow = true
-end = [ "tray", "bar", "widget", "power_profile", "network", "volume", "brightness", "battery", "clock", "control-center" ]
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
+end = [
+  "tray",
+  "bar",
+  "widget",
+  "power_profile",
+  "network",
+  "volume",
+  "brightness",
+  "battery",
+  "clock",
+  "control-center",
+]
 font_family = "Adwaita Sans"
 margin_ends = 0
 padding = 8
 panel_overlap = 0
 radius = 0
 shadow = false
-start = [ "launcher", "active_window" ]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3095346 (Copy Dotfiles)
+start = ["launcher", "active_window"]
 thickness = 33
 
 [battery]
 warning_threshold = 40
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 
 [control_center.calendar]
 show_events_card = false
@@ -53,15 +43,6 @@ type = "wifi"
 type = "bluetooth"
 
 [[control_center.shortcuts]]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-type = "nightlight"
-
-[[control_center.shortcuts]]
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 type = "power_profile"
 
 [[control_center.shortcuts]]
@@ -70,74 +51,56 @@ type = "dark_mode"
 [[control_center.shortcuts]]
 type = "clipboard"
 
-<<<<<<< HEAD
 [[control_center.shortcuts]]
 type = "nightlight"
 
-=======
-<<<<<<< HEAD
-=======
-[[control_center.shortcuts]]
-type = "nightlight"
-
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 [desktop_widgets]
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001" ]
+widget_order = ["desktop-widget-0000000000000001"]
 
-    [desktop_widgets.grid]
-    cell_size = 8
-    major_interval = 4
-    visible = true
+[desktop_widgets.grid]
+cell_size = 8
+major_interval = 4
+visible = true
 
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 168.0
-    box_width = 200.0
-    cx = 1259.0
-    cy = 124.0
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "weather"
+[desktop_widgets.widget.desktop-widget-0000000000000001]
+box_height = 168.0
+box_width = 200.0
+cx = 1259.0
+cy = 124.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "weather"
 
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        background_padding = 20
-        show_forecast = true
+[desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+background_padding = 20
+show_forecast = true
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3095346 (Copy Dotfiles)
 [dock]
 auto_hide = true
 reserve_space = false
 
 [idle]
-behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
 pre_action_fade_seconds = 10
 
-    [idle.behavior.lock]
-    action = "lock"
-    enabled = true
-    timeout = 300.0
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 300.0
 
-    [idle.behavior.lock-and-suspend]
-    action = "lock_and_suspend"
-    enabled = true
-    timeout = 350.0
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = true
+timeout = 350.0
 
-    [idle.behavior.screen-off]
-    action = "screen_off"
-    enabled = true
-    timeout = 300.0
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 300.0
 
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 [location]
 auto_locate = true
 
@@ -145,147 +108,116 @@ auto_locate = true
 blurred_desktop = true
 
 [lockscreen_widgets]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-enabled = false
-schema_version = 2
-widget_order = [ "lockscreen-login-box@eDP-1" ]
-=======
->>>>>>> 3095346 (Copy Dotfiles)
 enabled = true
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@WL-1",
-    "lockscreen-login-box@winit",
-    "lockscreen-login-box@eDP-1",
-    "lockscreen-widget-0000000000000001"
+  "lockscreen-login-box@WL-1",
+  "lockscreen-login-box@winit",
+  "lockscreen-login-box@eDP-1",
+  "lockscreen-widget-0000000000000001",
 ]
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 
-    [lockscreen_widgets.grid]
-    cell_size = 16
-    major_interval = 4
-    visible = true
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3095346 (Copy Dotfiles)
-    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
-    box_height = 196.0
-    box_width = 635.0
-    cx = 333.5
-    cy = 533.0
-    output = "WL-1"
-    placement_height = 715.0
-    placement_width = 667.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+box_height = 196.0
+box_width = 635.0
+cx = 333.5
+cy = 533.0
+output = "WL-1"
+placement_height = 715.0
+placement_width = 667.0
+rotation = 0.0
+type = "login_box"
 
-        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+[lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
 
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
-    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 683.0
-    cy = 586.0
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+box_height = 196.0
+box_width = 810.0
+cx = 683.0
+cy = 586.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "login_box"
 
-        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-[nightlight]
-enabled = true
+[lockscreen_widgets.widget."lockscreen-login-box@winit"]
+box_height = 196.0
+box_width = 810.0
+cx = 679.0
+cy = 522.0
+output = "winit"
+placement_height = 704.0
+placement_width = 1358.0
+rotation = 0.0
+type = "login_box"
 
-[shell]
-avatar_path = "/home/zeaman/Pictures/favicon.jpeg"
-=======
->>>>>>> 3095346 (Copy Dotfiles)
-    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 679.0
-    cy = 522.0
-    output = "winit"
-    placement_height = 704.0
-    placement_width = 1358.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
 
-        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+box_height = 128.0
+box_width = 320.0
+cx = 699.0
+cy = 192.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "clock"
 
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 128.0
-    box_width = 320.0
-    cx = 699.0
-    cy = 192.0
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
-        clock_style = "digital"
-        format = "{:%I:%M %p}"
-        timezone = "Africa/Addis_Ababa"
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+clock_style = "digital"
+format = "{:%I:%M %p}"
+timezone = "Africa/Addis_Ababa"
 
 [nightlight]
 enabled = false
@@ -300,105 +232,65 @@ copy_to_clipboard = true
 panel_open_near_click = false
 
 [plugins]
-enabled = [ "oldirtty/color_picker", "cleboost/zed-provider", "yocraft/web-launcher", "noctalia/umbriel-companion" ]
+enabled = [
+  "oldirtty/color_picker",
+  "cleboost/zed-provider",
+  "yocraft/web-launcher",
+  "noctalia/umbriel-companion",
+]
 
 [shell]
 avatar_path = "/home/zeaman/Pictures/favicon.jpg"
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 font_family = "Adwaita Sans"
 niri_overview_type_to_launch_enabled = true
 password_style = "random"
 polkit_agent = true
-<<<<<<< HEAD
 screen_time_enabled = true
-=======
-<<<<<<< HEAD
-=======
-screen_time_enabled = true
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 
-    [shell.panel]
-    clipboard_placement = "attached"
-    launcher_placement = "attached"
+[shell.panel]
+clipboard_placement = "attached"
+launcher_placement = "attached"
 
 [theme]
-<<<<<<< HEAD
 builtin = "Noctalia"
-=======
-<<<<<<< HEAD
-=======
-builtin = "Noctalia"
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-rainbow"
 
-    [theme.templates]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "kcolorscheme", "kitty", "niri", "qt", "starship" ]
-    community_ids = [ "bat" ]
-=======
->>>>>>> 3095346 (Copy Dotfiles)
-    builtin_ids = [
-        "alacritty",
-        "btop",
-        "gtk3",
-        "gtk4",
-        "ghostty",
-        "hyprland",
-        "kcolorscheme",
-        "kitty",
-        "niri",
-        "qt",
-        "starship",
-        "umbriel"
-    ]
-    community_ids = [ "libreoffice", "fastfetch", "hyprtoolkit" ]
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
+[theme.templates]
+builtin_ids = [
+  "alacritty",
+  "btop",
+  "gtk3",
+  "gtk4",
+  "ghostty",
+  "hyprland",
+  "kcolorscheme",
+  "kitty",
+  "niri",
+  "qt",
+  "starship",
+  "umbriel",
+]
+community_ids = ["libreoffice", "fastfetch", "hyprtoolkit"]
 
 [wallpaper]
 directory = "/home/zeaman/Pictures/Wallpapers"
 
-    [wallpaper.default]
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
+[wallpaper.default]
+path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
-    [wallpaper.last]
-    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
+[wallpaper.last]
+path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
-    [wallpaper.monitors.eDP-1]
-    path = "/home/zeaman/Pictures/Wallpapers/toronto.png"
-=======
->>>>>>> 3095346 (Copy Dotfiles)
-    path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
-
-    [wallpaper.last]
-    path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
-
-    [wallpaper.monitors.eDP-1]
-    path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
+[wallpaper.monitors.eDP-1]
+path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
 [widget.active_window]
 anchor = true
 
 [widget.bar]
 type = "noctalia/umbriel-companion:bar"
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 
 [widget.battery]
 display_mode = "graphic"
@@ -417,13 +309,6 @@ anchor = true
 capsule = true
 capsule_padding = 4
 capsule_radius = 5
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-custom_image = "/home/zeaman/Downloads/Bazzite_Logo.svg"
-scale = 1.45
-=======
->>>>>>> 3095346 (Copy Dotfiles)
 custom_image = "/home/zeaman/Pictures/Fedora.svg"
 glyph = ""
 scale = 1.2
@@ -433,10 +318,6 @@ album_art_only = true
 hide_when_no_media = true
 max_length = 170
 title_scroll = "on_hover"
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
 
 [widget.network]
 scale = 1.25
@@ -448,15 +329,6 @@ hide_passive = false
 [widget.volume]
 scale = 1.05
 show_label = false
-<<<<<<< HEAD
 
 [widget.widget]
 type = "oldirtty/color_picker:widget"
-=======
-<<<<<<< HEAD
-=======
-
-[widget.widget]
-type = "oldirtty/color_picker:widget"
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)

@@ -1,40 +1,18 @@
 palette = 0=#474747
 palette = 1=#ffb4ab
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-palette = 2=#84cfff
-palette = 3=#b6c9d8
-palette = 4=#ccc0e9
-palette = 5=#84cfff
-palette = 6=#b6c9d8
+palette = 2=#8fcdff
+palette = 3=#b8c8d9
+palette = 4=#d0bfe7
+palette = 5=#8fcdff
+palette = 6=#b8c8d9
 palette = 7=#e2e2e2
 palette = 8=#919191
 palette = 9=#ffb4ab
-palette = 10=#84cfff
-palette = 11=#b6c9d8
-palette = 12=#ccc0e9
-palette = 13=#84cfff
-palette = 14=#b6c9d8
-=======
->>>>>>> 3095346 (Copy Dotfiles)
-palette = 2=#aac7ff
-palette = 3=#bec6dc
-palette = 4=#ddbce0
-palette = 5=#aac7ff
-palette = 6=#bec6dc
-palette = 7=#e2e2e2
-palette = 8=#919191
-palette = 9=#ffb4ab
-palette = 10=#aac7ff
-palette = 11=#bec6dc
-palette = 12=#ddbce0
-palette = 13=#aac7ff
-palette = 14=#bec6dc
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
+palette = 10=#8fcdff
+palette = 11=#b8c8d9
+palette = 12=#d0bfe7
+palette = 13=#8fcdff
+palette = 14=#b8c8d9
 palette = 15=#e2e2e2
 background = #131313
 foreground = #e2e2e2

@@ -1,4 +1,5 @@
 description: Flatpak Apps
+
 packages:
   - ai.opencode.opencode
   - com.belmoussaoui.Authenticator

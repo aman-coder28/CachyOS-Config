@@ -10,17 +10,6 @@ packages:
   - wl-clipboard
   - cliphist
   - nwg-look
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  - xdg-desktop-portal-gtk
-  - sddm
-  - sddm-breeze
-  - qt5-qtgraphicaleffects
-  - qt5-qtquickcontrols2
-  - plasma-workspace
-=======
->>>>>>> 3095346 (Copy Dotfiles)
   - grim
   - slurp
   - swappy
@@ -32,7 +21,3 @@ packages:
   # - qt5-qtgraphicaleffects
   # - qt5-qtquickcontrols2
   # - plasma-workspace
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)

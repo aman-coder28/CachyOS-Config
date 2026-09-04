@@ -1,20 +1,5 @@
 name: My-Niri-Image
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-base_image: ghcr.io/ublue-os/bazzite-gnome:stable
-
-defaults:
-  terra_repo: true
-  lint: true
-  weak_deps: false
-=======
->>>>>>> 3095346 (Copy Dotfiles)
 base_image: RakuOS
 
 defaults:
   terra_repo: true
-<<<<<<< HEAD
-=======
->>>>>>> bcd7ef6 (Copy Dotfiles)
->>>>>>> 3095346 (Copy Dotfiles)
