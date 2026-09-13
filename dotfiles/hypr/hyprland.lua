@@ -254,8 +254,8 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("gnome-text-editor"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c zmn-shell"))
-hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("qs -c zmn-shell kill"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c music-island"))
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("qs -c music-island kill"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))

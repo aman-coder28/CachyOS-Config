@@ -137,10 +137,10 @@ binds {
     focus-column-right
   }
   Mod+P {
-   spawn-sh "qs -c zmn-shell"
+   spawn-sh "qs -c music-island"
   }
   Mod+Ctrl+P {
-  	spawn-sh "qs -c zmn-shell kill"
+  	spawn-sh "qs -c music-island kill"
   }
   XF86AudioRaiseVolume allow-when-locked=true {
     spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
