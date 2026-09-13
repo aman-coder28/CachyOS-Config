@@ -9,6 +9,7 @@ autostart = [
   "noctalia",
   "wl-paste --type text --watch cliphist store",
   "wl-paste --type image --watch cliphist store",
+  "sleep 7 && qs -c angular-frame"
 ]
 xwayland = true # requires restart to change
 show_cheatsheet = false # show keybinds overlay on startup
@@ -86,7 +87,7 @@ curve = "easeout"
 prefer_no_csd = false # false lets newly started apps draw their own decorations
 border_width = 0 # 0-100
 outer_border_width = 0 # 0-100
-corner_radius = 12 # 0-100, radius of the final decorated outer edge
+corner_radius = 9 # 0-100, radius of the final decorated outer edge
 drag_opacity = 0.75
 
 [appearance.blur]
@@ -104,7 +105,6 @@ enabled = true
 softness = 10 # 0-200, 0 = hard edge
 offset_x = 2 # -200 to 200
 offset_y = 2
-color = "#0000007F"
 
 # Overview -------------------------------------------------------------------
 
@@ -152,8 +152,8 @@ bottom = 0
 default_width_fraction = 1.0 # remove to let clients choose their initial width
 # A matching output may override this initial-only value for all its workspaces.
 center_underfull_strip = true # center the strip whenever it is narrower than the viewport
-center_focused = false # always center the focused column
-expand_single_column = true # fill lone column to viewport width
+center_focused = "on_overflow" # always center the focused column
+# expand_single_column = true # fill lone column to viewport width
 
 [layout.dwindle]
 [layout.master]
@@ -186,8 +186,8 @@ scroll_wheel_step = 60 # 1-1000
 enabled = false # false disables the tablet and its pads
 
 [input.cursor]
-theme = "Niko"
-size = 19 # 1-512
+theme = "macOS"
+size = 30 # 1-512
 hardware_cursor = true # false forces software cursor composition
 follows_focus = true # warp to windows selected by focus navigation
 hide_when_typing = false # hide after typing unless a pointer button is held
@@ -201,9 +201,10 @@ follows_mouse = true
 "Mod+Q" = "spawn:ghostty"
 "Mod+V" = "window-toggle-floating"
 "Mod+T" = "spawn:gnome-text-editor"
-"Mod+P" = "window-toggle-pinned"
 "Mod+E" = "window-toggle-maximize-to-edges"
 "Mod+M" = "spawn:gnome-system-monitor"
+"Mod+P" = "spawn:qs -c zmn-shell"
+"Mod+Ctrl+P" = "spawn:qs -c zmn-shell kill"
 "Mod+X" = "window-close"
 "Mod+Shift+Space" = "window-move-to-scratchpad"
 "Mod+Space" = "scratchpad-toggle"
@@ -227,24 +228,26 @@ follows_mouse = true
 "Mod+Shift+6" = "column-move-to-workspace:6"
 
 # --- Applications & Tools ---
-"Mod+R" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+R" = "window-cycle-width"
 "Mod+F" = "spawn:nautilus"
 "Mod+C" = "spawn:zed"
 "Mod+Z" = "spawn:zed"
 "Mod+B" = "spawn:helium-browser-bin"
 "Mod+K" = "spawn:codium"
 "Alt+V" = "spawn:flatpak run xyz.riothedev.emojify"
-"Mod+L" = "spawn:libreoffice"
+"Mod+L" = "spawn:flatpak run org.libreoffice.LibreOffice"
 "Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
 "Mod+S" = "spawn:noctalia msg panel-toggle control-center"
 "Mod+H" = "spawn:noctalia msg panel-toggle clipboard"
-"Super+Alt+L" = "spawn:swaylock"
 
 # --- Window Focus ---
 "Mod+A" = "window-focus-left"
 "Mod+D" = "window-focus-right"
 "Mod+Left" = "window-focus-left"
 "Mod+Right" = "window-focus-right"
+
+"Mod+Ctrl+Right" = "window-move-or-output-right"
+"Mod+Ctrl+Left" = "window-move-or-output-left"
 
 "Mod+U" = "session-quit"
 "Print" = "spawn:grim -g \"$(slurp)\" - | swappy -f -"
@@ -259,8 +262,8 @@ follows_mouse = true
 "XF86AudioNext" = "spawn:playerctl next"
 "XF86AudioPrev" = "spawn:playerctl previous"
 
-"XF86MonBrightnessUp" = "spawn:brightnessctl set 10%"
-"XF86MonBrightnessDown" = "spawn:brightnessctl set 10%-"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up 10"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down 10"
 
 # Window rules (see docs/user/window-rules.md) ---------------------------
 # Blur all windows
@@ -270,7 +273,7 @@ blur_optimized = false
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
-default_floating = true
+default_floating = false
 default_size = [1020, 900]
 
 [[window_rule]]
@@ -290,6 +293,12 @@ default_position = { x = 20, y = 20, anchor = "bottom_right" }
 match.app_id = "^xyz.riothedev.emojify$"
 default_floating = true
 default_size = [646, 474]
+
+# Emojify (Fixed floating size)
+[[window_rule]]
+match.app_id = "^com.github.neithern.g4music$"
+default_floating = true
+default_size = [550, 730]
 
 # Layer rules (see docs/user/layer-rules.md) ---------------------------
 
