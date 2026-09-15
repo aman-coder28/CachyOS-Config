@@ -21,8 +21,11 @@ hl.monitor({
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd("noctalia")
-	hl.exec_cmd("sleep 4 && qs -c angular-frame")
-	hl.exec_cmd("sleep 4 && qs -c music-island")
+	hl.exec_cmd("sleep 2 && qs -c angular-frame")
+	hl.exec_cmd("sleep 2 && qs -c music-island")
+
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
 
 	-- hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	-- hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -35,10 +38,15 @@ end)
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Niko")
-hl.env("HYPRCURSOR_THEME", "Niko")
-hl.env("HYPRCURSOR_SIZE", "19")
+hl.env("XCURSOR_THEME", "macOS")
+hl.env("HYPRCURSOR_THEME", "macOS")
+hl.env("HYPRCURSOR_SIZE", "30")
 hl.env("XDG_MENU_PREFIX", "gnome-")
+
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
+hl.env("QT_WAYLAND_DECORATION", "adwaita")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -84,7 +92,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding         = 12,
+		rounding         = 10,
 		rounding_power   = 2,
 
 		-- Change transparency of focused and unfocused windows
@@ -134,27 +142,48 @@ hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQu
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({
+	leaf = "workspaces",
+	enabled = true,
+	speed = 1.94,
+	curve = "default",
+	bezier = "almostLinear",
+	style = "slidevert"
+})
+hl.animation({
+	leaf = "workspacesIn",
+	enabled = true,
+	speed = 1.94,
+	curve = "default",
+	bezier = "almostLinear",
+	style = "slidevert"
+})
+hl.animation({
+	leaf = "workspacesOut",
+	enabled = true,
+	speed = 1.94,
+	bezier = "almostLinear",
+	style = "slidevert",
+	curve = "default"
+})
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
--- 	name        = "no-gaps-wtv1",
--- 	match       = { float = false, workspace = "w[tv1]" },
--- 	border_size = 0,
--- 	rounding    = 0,
--- })
--- hl.window_rule({
--- 	name        = "no-gaps-f1",
--- 	match       = { float = false, workspace = "f[1]" },
--- 	border_size = 0,
--- 	rounding    = 0,
--- })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({
+	name        = "no-gaps-wtv1",
+	match       = { float = false, workspace = "w[tv1]" },
+	border_size = 0,
+	rounding    = 0,
+})
+hl.window_rule({
+	name        = "no-gaps-f1",
+	match       = { float = false, workspace = "f[1]" },
+	border_size = 0,
+	rounding    = 0,
+})
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
@@ -180,10 +209,9 @@ hl.config({
 		wrap_swapcol = true,
 		focus_fit_method = true,
 		explicit_column_widths = "0.5, 1.0",
-		column_width = 1.0
+		column_width = 1.0 -- This already ensures it takes 100% of the width
 	},
 })
-
 ----------------
 ----  MISC  ----
 ----------------
@@ -219,7 +247,7 @@ hl.config({
 
 hl.gesture({
 	fingers = 3,
-	direction = "horizontal",
+	direction = "vertical",
 	action = "workspace"
 })
 
@@ -260,7 +288,7 @@ hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("qs -c music-island kill"))
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
 
-hl.bind(mainMod .. " + G", hl.dsp.layout("fit_into_view"))
+hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
 
 hl.bind(mainMod .. " + A", hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))
@@ -279,11 +307,6 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
-
--- -- Example special workspace (scratchpad)
--- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
--- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -359,3 +382,6 @@ hl.window_rule({
 	move  = "20 monitor_h-120",
 	float = true,
 })
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

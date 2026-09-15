@@ -9,7 +9,11 @@
 	},
 	"hard_tabs": true,
 	"tab_size": 2,
-	"icon_theme": "VSCode Icons for Zed (Dark)",
+	"icon_theme": {
+  "mode": "light",
+  "light": "VSCode Icons for Zed (Dark)",
+  "dark": "VSCode Icons for Zed (Dark)"
+ },
 	"disable_ai": true,
 	"toolbar": {
 		"quick_actions": false,
@@ -29,7 +33,11 @@
 	"buffer_font_size": 15.6,
 	"buffer_font_weight": 350,
 	"buffer_font_family": "JetBrains Mono",
-	"theme": "Rosé Pine",
+	"theme": {
+  "mode": "dark",
+  "light": "One Light",
+  "dark": "Rosé Pine"
+ },
 	"format_on_save": "on",
 	"lsp_document_colors": "inlay",
 	"lsp": {
