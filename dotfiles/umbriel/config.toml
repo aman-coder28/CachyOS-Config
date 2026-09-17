@@ -9,7 +9,7 @@ autostart = [
   "noctalia",
   "wl-paste --type text --watch cliphist store",
   "wl-paste --type image --watch cliphist store",
-  "sleep 7 && qs -c angular-frame",
+  "sleep 7 && qs -c angular-frame"
 ]
 xwayland = true # requires restart to change
 show_cheatsheet = false # show keybinds overlay on startup
@@ -203,8 +203,8 @@ follows_mouse = true
 "Mod+T" = "spawn:gnome-text-editor"
 "Mod+E" = "window-toggle-maximize-to-edges"
 "Mod+M" = "spawn:gnome-system-monitor"
-"Mod+P" = "spawn:qs -c music-island"
-"Mod+Ctrl+P" = "spawn:qs -c music-island kill"
+"Mod+P" = "spawn:qs -c zmn-shell"
+"Mod+Ctrl+P" = "spawn:qs -c zmn-shell kill"
 "Mod+X" = "window-close"
 "Mod+Shift+Space" = "window-move-to-scratchpad"
 "Mod+Space" = "scratchpad-toggle"

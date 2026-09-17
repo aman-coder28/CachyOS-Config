@@ -10,11 +10,12 @@
 	"hard_tabs": true,
 	"tab_size": 2,
 	"icon_theme": {
-  "mode": "light",
-  "light": "VSCode Icons for Zed (Dark)",
-  "dark": "VSCode Icons for Zed (Dark)"
- },
+		"mode": "light",
+		"light": "VSCode Icons for Zed (Dark)",
+		"dark": "VSCode Icons for Zed (Dark)",
+	},
 	"disable_ai": true,
+	"vim_mode": false,
 	"toolbar": {
 		"quick_actions": false,
 		"breadcrumbs": false,
@@ -34,10 +35,10 @@
 	"buffer_font_weight": 350,
 	"buffer_font_family": "JetBrains Mono",
 	"theme": {
-  "mode": "dark",
-  "light": "One Light",
-  "dark": "Rosé Pine"
- },
+		"mode": "dark",
+		"light": "One Light",
+		"dark": "Rosé Pine",
+	},
 	"format_on_save": "on",
 	"lsp_document_colors": "inlay",
 	"lsp": {

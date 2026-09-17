@@ -18,3 +18,5 @@ outer = "#121315FF"
 
 [colors.overview]
 background_tint = "#12131588"
+badge = "#adcae2FF"
+workspace_background = "#121315FF"

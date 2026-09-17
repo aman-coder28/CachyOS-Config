@@ -1,45 +1,15 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "alt-s": "workspace::Save"
-    }
-  },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "ctrl-s": "workspace::Save"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-s": "workspace::SaveAll"
-    }
-  },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "ctrl-alt-s": "workspace::SaveAll"
-    }
-  }
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-s": "workspace::SaveAll",
+			"ctrl-c": "editor::Copy",
+			"ctrl-x": "editor::Cut",
+			"ctrl-v": "editor::Paste",
+			"alt-s": "workspace::SaveAll",
+			"alt-c": "editor::Copy",
+			"alt-x": "editor::Cut",
+			"alt-v": "editor::Paste",
+		},
+	},
 ]

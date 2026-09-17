@@ -20,12 +20,15 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia")
-	hl.exec_cmd("sleep 2 && qs -c angular-frame")
-	hl.exec_cmd("sleep 2 && qs -c music-island")
-
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
+
+	hl.exec_cmd("hyprpm reload -n")
+
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("sleep 3 && qs -c angular-frame")
+	hl.exec_cmd("sleep 3 && qs -c music-island")
+
 
 	-- hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	-- hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -41,7 +44,7 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "macOS")
 hl.env("HYPRCURSOR_THEME", "macOS")
 hl.env("HYPRCURSOR_SIZE", "30")
-hl.env("XDG_MENU_PREFIX", "gnome-")
+-- hl.env("XDG_MENU_PREFIX", "gnome-")
 
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
@@ -56,16 +59,16 @@ hl.env("QT_WAYLAND_DECORATION", "adwaita")
 -- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
 -- for security reasons
 
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
+hl.config({
+	ecosystem = {
+		enforce_permissions = true,
+	},
+})
 
 -- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 -- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
+hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -209,9 +212,28 @@ hl.config({
 		wrap_swapcol = true,
 		focus_fit_method = true,
 		explicit_column_widths = "0.5, 1.0",
-		column_width = 1.0 -- This already ensures it takes 100% of the width
+		column_width = 1.0
 	},
 })
+
+hl.config({
+	plugin = {
+		scrolloverview = {
+			gesture_distance = 100,
+			scale = 0.6,
+			workspace_gap = 20,
+			layout = "vertical",
+			wallpaper = 2,
+			blur = true,
+
+			shadow = {
+				enabled = true,
+				range = 20,
+			},
+		},
+	},
+})
+
 ----------------
 ----  MISC  ----
 ----------------
@@ -273,32 +295,43 @@ hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zed"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser-bin"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("codium"))
-hl.bind("ALT + V", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("flatpak run org.libreoffice.LibreOffice"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("gnome-text-editor"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("amberol"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("gnome-system-monitor"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c music-island"))
-hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("qs -c music-island kill"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("qs -c music-island kill"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
 
-hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
+hl.bind("ALT + S", hl.dsp.send_shortcut({ mods = "CTRL", key = "S", window = "activewindow" }))
+hl.bind("ALT + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C", window = "activewindow" }))
+hl.bind("ALT + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V", window = "activewindow" }))
+hl.bind("ALT + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }))
+hl.bind("ALT + Z", hl.dsp.send_shortcut({ mods = "CTRL", key = "Z", window = "activewindow" }))
+
+hl.bind(mainMod .. " + J", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
 
 hl.bind(mainMod .. " + A", hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + E", hl.dsp.layout("colresize +conf"))
-hl.bind(mainMod .. " + CTRL + left", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.layout("swapcol r"))
+-- Toggle ScrollOverview with SUPER+g
+hl.bind("SUPER + O", function()
+	hl.plugin.scrolloverview.overview("toggle all")
+end)
 
 hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
-
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
