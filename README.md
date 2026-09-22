@@ -1,17 +1,17 @@
-# Niri-Container
+# CachyOS-Config
 
-A [CachyOS](https://cachyos.org) packages definition and installation template that installs [Niri](https://github.com/YaLTeR/niri) scrollable-tiling Wayland compositor, GUI programs, and dev tools.
+A [CachyOS](https://cachyos.org) packages definition and installation template that installs [Hyprland](https://github.com/hyprwm/Hyprland) scrollable-tiling Wayland compositor, GUI programs, and dev tools.
 
 The project is built and maintained with [**bootc-yaml**](https://gitlab.com/beaman-coder/bootc-yaml) — a config CLI that describes the package sets in YAML config files and generates the install script instead of hand-writing it.
 
 ## Overview
 
 - **Base image:** CachyOS
-- **Compositor:** Niri window manager with Noctalia theme, supporting tooling (`xwayland-satellite`, `nwg-look`, `kitty`, `grim`, `slurp`, `swappy`, ...)
+- **Compositor:** Hyprland window manager with Noctalia Shell, supporting tooling (`xwayland-satellite`, `nwg-look`, `alacritty`, `grim`, `slurp`, `swappy`, ...)
 - **GUI programs:** Ghostty, KDE Connect, Zed, VSCodium, gparted, and more
 - **Flatpaks:** Brave, Discord, LibreOffice, VLC, LocalSend, and more
 - **Dev tools:** Go, Rust, Zig, Neovim, git, gh, ...
-- **Dotfiles:** Pre-configured settings for Niri, Ghostty, Fish, Zed, and other tools
+- **Dotfiles:** Pre-configured settings for Hyprland, Ghostty, Fish, Zed, and other tools
 
 ## Project Structure
 
