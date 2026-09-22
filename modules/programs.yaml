@@ -1,4 +1,5 @@
 description: GUI Programs
+
 packages:
   - ghostty
   - kde-connect
@@ -7,3 +8,5 @@ packages:
   - gparted
   - codium
   - btop
+  - gpu-screen-recorder
+  - gpu-screen-recorder-ui

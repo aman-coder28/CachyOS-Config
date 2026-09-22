@@ -1,15 +1,17 @@
 # Niri-Container
 
-A [bootc](https://containers.github.io/bootc/) image that layers the [Niri](https://github.com/YaLTeR/niri) scrollable-tiling Wayland compositor, GUI programs, and dev tools on top of a Universal Blue base image.
+A [RakuOS](https://gitlab.com/beaman-coder/bootc-yaml) packages definition and installation template that installs [Niri](https://github.com/YaLTeR/niri) scrollable-tiling Wayland compositor, GUI programs, and dev tools.
 
-The project is built and maintained with [**bootc-yaml**](https://gitlab.com/beaman-coder/bootc-yaml) — a bootc configuration CLI that describes the image in YAML config files and generates the Containerfile boilerplate (DNF caching, weak-deps off, Terra repo, `bootc container lint`) instead of hand-writing it.
+The project is built and maintained with [**bootc-yaml**](https://gitlab.com/beaman-coder/bootc-yaml) (`@rakuos` tag) — a bootc configuration CLI that describes the image in YAML config files and generates the Containerfile boilerplate (DNF caching, weak-deps off, Terra repo, `bootc container lint`) instead of hand-writing it.
 
 ## Overview
 
-- **Base image:** `ghcr.io/ublue-os/bazzite-gnome:stable`
-- **Compositor:** Niri window manager with supporting tooling (`xwayland-satellite`, `swayidle`, `nwg-look`, `keyd`, ...)
+- **Base image:** RakuOS
+- **Compositor:** Niri window manager with Noctalia theme, supporting tooling (`xwayland-satellite`, `swayidle`, `nwg-look`, `kitty`, `grim`, `slurp`, `swappy`, ...)
 - **GUI programs:** Ghostty, KDE Connect, Zed, VSCodium, gparted, and more
+- **Flatpaks:** Brave, Discord, LibreOffice, VLC, LocalSend, and more
 - **Dev tools:** Go, Rust, Zig, Neovim, git, gh, ...
+- **Dotfiles:** Pre-configured settings for Niri, Ghostty, Fish, Zed, and other tools
 
 ## Project Structure
 
@@ -20,7 +22,10 @@ Niri-Container/
 ├── modules/                 # One YAML per package group (source of truth)
 │   ├── programs.yaml        # GUI Programs
 │   ├── devtools.yaml        # Dev Tools Packages
-│   └── window-manager.yaml  # Windows Manager
+│   ├── flatpaks.yaml        # Flatpak Applications
+│   ├── removals.yaml         # Packages to remove
+│   └── window-manager.yaml  # Window Manager
+├── dotfiles/                # Configuration files for installed apps
 └── scripts/                 # Generated companion install script
     └── install.sh
 ```
@@ -30,15 +35,13 @@ The package lists live in `modules/*.yaml`; `Containerfile` and `scripts/install
 ## Install bootc-yaml
 
 ```bash
-go install gitlab.com/beaman-coder/bootc-yaml@latest
+go install gitlab.com/beaman-coder/bootc-yaml@rakuos
 ```
 
 ## Prerequisites
 
 - **Go** — required to install `bootc-yaml`
-- **Podman** — to build the image
-- **bootc** — to switch to the built image (has `install_weak_deps` and validate requirements)
-- **sudo** — needed for `podman build`, `bootc switch`, and `--validate` (which enables Copr repos on the host)
+- **sudo** — needed for `--validate` flag (which enables Copr repos on the host)
 
 ## Quick Start
 
@@ -47,11 +50,12 @@ go install gitlab.com/beaman-coder/bootc-yaml@latest
 bootc-yaml init my-image
 
 # 2. Regenerate the Containerfile and install script
-bootc-yaml gen my-image --mode=shell --validate
+bootc-yaml gen my-image --mode=raku --validate
 
 # 3. Build and switch to the image
-sudo podman build -t localhost/my-niri-image my-image
-sudo bootc switch --transport containers-storage localhost/my-niri-image
+cd my-image
+chmod +X scripts/install.sh
+./scripts/install.sh
 ```
 
 ## Customization
@@ -59,20 +63,11 @@ sudo bootc switch --transport containers-storage localhost/my-niri-image
 Everything that gets installed is driven by the YAML modules — no need to touch the generated Containerfile:
 
 - **Add packages:** add them to the relevant `packages` list in `modules/*.yaml`, or create a new module file (e.g. `modules/gaming.yaml`) — every `modules/*.yaml` file is picked up on generation.
+- **Add Flatpaks:** add Flatpak app IDs to `modules/flatpaks.yaml`.
 - **Install a DNF group:** prefix the group name with `@` (e.g. `@virtualization`).
 - **Add Copr repos:** add a `repos.copr` list to the module.
+- **Remove packages:** add them to `modules/removals.yml`.
 - **Change the base image / defaults:** edit `config.yaml` (`base_image`, `defaults.terra_repo`, `defaults.lint`, `defaults.weak_deps`).
-- **Regenerate:** run `bootc-yaml gen . --mode=shell --validate` again.
-
-## Usage
-
-```bash
-# Regenerate the Containerfile from config.yaml + modules/ (check packages against dnf repos first)
-bootc-yaml gen . --mode=shell --validate
-
-# Build and switch to the image
-sudo podman build -t localhost/my-niri-image .
-sudo bootc switch --transport containers-storage localhost/my-niri-image
-```
+- **Regenerate:** run `bootc-yaml gen . --mode=raku --validate` again.
 
 See the [bootc-yaml README](https://gitlab.com/beaman-coder/bootc-yaml) for full commands and configuration details.

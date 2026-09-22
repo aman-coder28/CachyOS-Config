@@ -54,30 +54,6 @@ type = "clipboard"
 [[control_center.shortcuts]]
 type = "nightlight"
 
-[desktop_widgets]
-schema_version = 2
-widget_order = ["desktop-widget-0000000000000001"]
-
-[desktop_widgets.grid]
-cell_size = 8
-major_interval = 4
-visible = true
-
-[desktop_widgets.widget.desktop-widget-0000000000000001]
-box_height = 168.0
-box_width = 200.0
-cx = 1259.0
-cy = 124.0
-output = "eDP-1"
-placement_height = 768.0
-placement_width = 1366.0
-rotation = 0.0
-type = "weather"
-
-[desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-background_padding = 20
-show_forecast = true
-
 [dock]
 auto_hide = true
 reserve_space = false
@@ -113,7 +89,7 @@ schema_version = 2
 widget_order = [
   "lockscreen-login-box@WL-1",
   "lockscreen-login-box@winit",
-  "lockscreen-login-box@eDP-1",
+  "lockscreen-login-box@eeDP-1",
   "lockscreen-widget-0000000000000001",
 ]
 
@@ -149,18 +125,18 @@ show_session_buttons = true
 show_unlock_hint = true
 show_weather = true
 
-[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+[lockscreen_widgets.widget."lockscreen-login-box@eeDP-1"]
 box_height = 196.0
 box_width = 810.0
 cx = 683.0
 cy = 586.0
-output = "eDP-1"
+output = "eeDP-1"
 placement_height = 768.0
 placement_width = 1366.0
 rotation = 0.0
 type = "login_box"
 
-[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+[lockscreen_widgets.widget."lockscreen-login-box@eeDP-1".settings]
 background_color = "surface_variant"
 background_opacity = 0.88
 background_radius = 12.0
@@ -208,7 +184,7 @@ box_height = 128.0
 box_width = 320.0
 cx = 699.0
 cy = 192.0
-output = "eDP-1"
+output = "eeDP-1"
 placement_height = 768.0
 placement_width = 1366.0
 rotation = 0.0
@@ -283,7 +259,7 @@ path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 [wallpaper.last]
 path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
-[wallpaper.monitors.eDP-1]
+[wallpaper.monitors.eeDP-1]
 path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
 [widget.active_window]
@@ -332,3 +308,7 @@ show_label = false
 
 [widget.widget]
 type = "oldirtty/color_picker:widget"
+
+[theme.templates.user.quickshell]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/quickshell-colors.json"
+output_path = "$XDG_CONFIG_HOME/quickshell/noctalia-colors.json"
