@@ -2,18 +2,15 @@ description: Dev Tools Packages
 
 packages:
   - git
-  - gh
+  - github-cli
   - glab
-  - golang
+  - go
   - gopls
   - bat
   - eza
   - atuin
   - starship
   - zoxide
-  - mise
-  # - zig
-  # - rust
-  # - cargo
-  # - rust-analyzer
-  # - neovim
+  - nodejs
+  - pnpm
+  - npm

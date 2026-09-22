@@ -25,10 +25,9 @@ hl.on("hyprland.start", function()
 
 	hl.exec_cmd("hyprpm reload -n")
 
+	hl.exec_cmd("hypridle")
 	hl.exec_cmd("noctalia")
-	hl.exec_cmd("sleep 3 && qs -c angular-frame")
-	hl.exec_cmd("sleep 3 && qs -c music-island")
-
+	hl.exec_cmd("sleep 2 && qs -c angular-frame")
 
 	-- hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	-- hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -40,7 +39,7 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "30")
 hl.env("XCURSOR_THEME", "macOS")
 hl.env("HYPRCURSOR_THEME", "macOS")
 hl.env("HYPRCURSOR_SIZE", "30")
@@ -65,9 +64,8 @@ hl.config({
 	},
 })
 
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
+hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
+hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 -----------------------
 ---- LOOK AND FEEL ----
@@ -292,22 +290,22 @@ hl.bind(mainMod .. " + U",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("nautilus"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zed"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser-bin"))
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("codium"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zeditor"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("kdeconnect-app"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("flatpak run org.libreoffice.LibreOffice"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("gnome-text-editor"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("amberol"))
-hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("gnome-system-monitor"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("flatpak run io.bassi.Amberol"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("resources"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c music-island"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("qs -c music-island kill"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c angular-frame"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("qs -c angular-frame kill"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
@@ -319,6 +317,8 @@ hl.bind("ALT + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "ac
 hl.bind("ALT + Z", hl.dsp.send_shortcut({ mods = "CTRL", key = "Z", window = "activewindow" }))
 
 hl.bind(mainMod .. " + J", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
+
+hl.bind(mainMod .. "+ Y", hl.dsp.exec_cmd("loginctl lock-session"))
 
 hl.bind(mainMod .. " + A", hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))

@@ -2,7 +2,7 @@ description: GUI Programs
 
 packages:
   - ghostty
-  - kde-connect
+  - kdeconnect
   - helium-browser-bin
   - zed
   - gparted

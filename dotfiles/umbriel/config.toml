@@ -1,5 +1,5 @@
 [include]
-files = ["noctalia.toml"]
+files = []
 
 [output.DP-1]
 workspaces = 5

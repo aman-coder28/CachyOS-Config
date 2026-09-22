@@ -2,17 +2,17 @@ zoxide init fish | source
 starship init fish | source
 atuin init fish | source
 
-mise activate fish | source
-
-if status is-interactive
-# Commands to run in interactive sessions can go here
-end
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # pnpm
-set -gx PNPM_HOME "/home/zeaman/.local/share/pnpm"
+set -gx PNPM_HOME "/home/zeamanuel/.local/share/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
   set -gx PATH "$PNPM_HOME/bin" $PATH
 end
 # pnpm end
+
+# overwrite greeting
+# potentially disabling fastfetch
+#function fish_greeting
+#    # smth smth
+#end

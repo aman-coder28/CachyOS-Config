@@ -1,22 +1,24 @@
 #!/bin/bash
 set -euo pipefail
 
-# Dev Tools Packages 
-sudo rum install -y git \
- 	gh \
+# Dev Tools Packages
+sudo pacman -S git \
+ 	github-cli \
  	glab \
- 	golang \
+ 	go \
  	gopls \
  	bat \
  	eza \
  	atuin \
  	starship \
  	zoxide \
- 	mise
+ 	nodejs \
+ 	pnpm \
+ 	npm
 
-# GUI Programs 
-sudo rum install -y ghostty \
- 	kde-connect \
+# GUI Programs
+sudo pacman -S ghostty \
+ 	kdeconnect \
  	helium-browser-bin \
  	zed \
  	gparted \
@@ -25,22 +27,26 @@ sudo rum install -y ghostty \
  	gpu-screen-recorder \
  	gpu-screen-recorder-ui
 
-# Windows Manager 
-sudo rum install -y niri \
+# Windows Manager
+sudo pacman -S niri \
  	noctalia \
  	xwayland-satellite \
  	mate-polkit \
- 	swayidle \
- 	kitty \
+ 	alacritty \
  	wl-clipboard \
  	cliphist \
  	nwg-look \
  	grim \
  	slurp \
  	swappy \
- 	xdg-desktop-portal-gtk \
- 	umbriel-nightly \
- 	xdg-desktop-portal-umbriel-nightly
+ 	qgnomeplatform-qt5 \
+ 	qgnomeplatform-qt6 \
+ 	qt6-qtwayland-adwaita-decoration \
+ 	hyprland \
+ 	hyprpm \
+ 	hypridle \
+ 	xdg-desktop-portal-hyprland \
+ 	quickshell
 
 # Flatpak Apps
 flatpak install -y flathub ai.opencode.opencode \
@@ -70,4 +76,4 @@ flatpak install -y flathub ai.opencode.opencode \
  	com.transmissionbt.Transmission \
  	org.libreoffice.LibreOffice
 
-cp -rn ~/Niri-Container-rakuos/dotfiles/* ~/.config/
+cp -rn ~/home/zeamanuel/CachyOS-Config/dotfiles/* ~/.config/
