@@ -1,8 +1,19 @@
 description: Windows Manager
 
 packages:
-  - niri
+  - hyprland
+  - hyprpm
+  - hypridle
+  - hyprland-qt-support
+  - hyprpicker
+  - xdg-desktop-portal-hyprland
+  - qgnomeplatform-qt5
+  - qgnomeplatform-qt6
+  - qt6-qtwayland-adwaita-decoration
+  - quickshell
+  - cava
   - noctalia
+  - noctalia-greeter
   - xwayland-satellite
   - mate-polkit
   - alacritty
@@ -12,11 +23,4 @@ packages:
   - grim
   - slurp
   - swappy
-  - qgnomeplatform-qt5
-  - qgnomeplatform-qt6
-  - qt6-qtwayland-adwaita-decoration
-  - hyprland
-  - hyprpm
-  - hypridle
-  - xdg-desktop-portal-hyprland
-  - quickshell
+  - niri

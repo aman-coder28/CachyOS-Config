@@ -3,8 +3,9 @@ description: Dev Tools Packages
 packages:
   - git
   - github-cli
-  - glab
+  - forgejo-cli
   - go
+  - podman
   - gopls
   - bat
   - eza

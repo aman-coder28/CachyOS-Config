@@ -10,3 +10,6 @@ packages:
   - btop
   - gpu-screen-recorder
   - gpu-screen-recorder-ui
+  - amberol
+  - nwg-look
+  - pavucontrol

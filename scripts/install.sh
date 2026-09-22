@@ -4,8 +4,9 @@ set -euo pipefail
 # Dev Tools Packages
 sudo pacman -S git \
  	github-cli \
- 	glab \
+ 	forgejo-cli \
  	go \
+ 	podman \
  	gopls \
  	bat \
  	eza \
@@ -25,11 +26,25 @@ sudo pacman -S ghostty \
  	codium \
  	btop \
  	gpu-screen-recorder \
- 	gpu-screen-recorder-ui
+ 	gpu-screen-recorder-ui \
+ 	amberol \
+ 	nwg-look \
+ 	pavucontrol
 
 # Windows Manager
-sudo pacman -S niri \
+sudo pacman -S hyprland \
+ 	hyprpm \
+ 	hypridle \
+ 	hyprland-qt-support \
+ 	hyprpicker \
+ 	xdg-desktop-portal-hyprland \
+ 	qgnomeplatform-qt5 \
+ 	qgnomeplatform-qt6 \
+ 	qt6-qtwayland-adwaita-decoration \
+ 	quickshell \
+ 	cava \
  	noctalia \
+ 	noctalia-greeter \
  	xwayland-satellite \
  	mate-polkit \
  	alacritty \
@@ -39,14 +54,7 @@ sudo pacman -S niri \
  	grim \
  	slurp \
  	swappy \
- 	qgnomeplatform-qt5 \
- 	qgnomeplatform-qt6 \
- 	qt6-qtwayland-adwaita-decoration \
- 	hyprland \
- 	hyprpm \
- 	hypridle \
- 	xdg-desktop-portal-hyprland \
- 	quickshell
+ 	niri
 
 # Flatpak Apps
 flatpak install -y flathub ai.opencode.opencode \
