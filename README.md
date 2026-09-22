@@ -1,6 +1,6 @@
 # CachyOS-Config
 
-A [CachyOS](https://cachyos.org) packages definition and installation template that installs [Hyprland](https://github.com/hyprwm/Hyprland) scrollable-tiling Wayland compositor, GUI programs, and dev tools.
+A [CachyOS](https://cachyos.org) packages definition and installation template that installs [Hyprland](https://github.com/hyprwm/Hyprland) tiling Wayland compositor, GUI programs, and Dev tools.
 
 The project is built and maintained with [**bootc-yaml**](https://gitlab.com/beaman-coder/bootc-yaml) — a config CLI that describes the package sets in YAML config files and generates the install script instead of hand-writing it.
 
