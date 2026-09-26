@@ -1,5 +1,6 @@
 zoxide init fish | source
 starship init fish | source
+# iris init fish | source
 atuin init fish | source
 
 source /usr/share/cachyos-fish-config/cachyos-config.fish
