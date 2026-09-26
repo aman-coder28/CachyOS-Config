@@ -9,7 +9,7 @@ autostart = [
   "noctalia",
   "wl-paste --type text --watch cliphist store",
   "wl-paste --type image --watch cliphist store",
-  "sleep 7 && qs -c angular-frame"
+  "sleep 2 && qs -c angular-frame"
 ]
 xwayland = true # requires restart to change
 show_cheatsheet = false # show keybinds overlay on startup
@@ -138,7 +138,8 @@ action = "spawn:notify-send 'Bottom right'"
 [layout]
 mode = "scrolling" # "scrolling", "dwindle", or "master"
 gap = 2 # 0-500
-width_presets = [0.333, 0.5, 1.0] # width and height cycling, tiled and floating alike
+extent_presets = [0.5, 1.0]
+# width_presets = [0.333, 0.5, 1.0] # width and height cycling, tiled and floating alike
 
 [layout.struts]
 left = 0 # -65535 to 65535
@@ -149,11 +150,11 @@ bottom = 0
 [layout.scrolling]
 # Vertical workspaces stack horizontal lanes from top to bottom.
 # direction = "horizontal"
-default_width_fraction = 1.0 # remove to let clients choose their initial width
 # A matching output may override this initial-only value for all its workspaces.
 center_underfull_strip = true # center the strip whenever it is narrower than the viewport
 center_focused = "on_overflow" # always center the focused column
 # expand_single_column = true # fill lone column to viewport width
+default_extent_fraction = 1.0
 
 [layout.dwindle]
 [layout.master]
@@ -202,9 +203,9 @@ follows_mouse = true
 "Mod+V" = "window-toggle-floating"
 "Mod+T" = "spawn:gnome-text-editor"
 "Mod+E" = "window-toggle-maximize-to-edges"
-"Mod+M" = "spawn:gnome-system-monitor"
-"Mod+P" = "spawn:qs -c zmn-shell"
-"Mod+Ctrl+P" = "spawn:qs -c zmn-shell kill"
+"Mod+M" = "spawn:resources"
+"Mod+P" = "spawn:qs -c angular-frame"
+"Mod+Ctrl+P" = "spawn:qs -c angular-frame kill"
 "Mod+X" = "window-close"
 "Mod+Shift+Space" = "window-move-to-scratchpad"
 "Mod+Space" = "scratchpad-toggle"
@@ -228,11 +229,11 @@ follows_mouse = true
 "Mod+Shift+6" = "column-move-to-workspace:6"
 
 # --- Applications & Tools ---
-"Mod+R" = "window-cycle-width"
+"Mod+R" = "window-cycle-primary-extent"
 "Mod+F" = "spawn:nautilus"
-"Mod+C" = "spawn:zed"
-"Mod+Z" = "spawn:zed"
-"Mod+B" = "spawn:helium-browser-bin"
+"Mod+C" = "spawn:zeditor"
+"Mod+Z" = "spawn:zeditor"
+"Mod+B" = "spawn:helium-browser"
 "Mod+K" = "spawn:codium"
 "Alt+V" = "spawn:flatpak run xyz.riothedev.emojify"
 "Mod+L" = "spawn:flatpak run org.libreoffice.LibreOffice"
@@ -274,12 +275,12 @@ blur_optimized = false
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = false
-default_size = [1020, 900]
+default_floating_size_px = { width = 1020, height = 90 }
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
-default_size = [800, 600]
+default_floating_size_px = { width = 800, height = 600 }
 
 # Browsers do not expose a semantic PiP role or control global window position.
 [[window_rule]]
@@ -292,13 +293,13 @@ default_position = { x = 20, y = 20, anchor = "bottom_right" }
 [[window_rule]]
 match.app_id = "^xyz.riothedev.emojify$"
 default_floating = true
-default_size = [646, 474]
+default_floating_size_px = { width = 646, height = 474 }
 
 # Emojify (Fixed floating size)
 [[window_rule]]
 match.app_id = "^com.github.neithern.g4music$"
 default_floating = true
-default_size = [550, 730]
+default_floating_size_px = { width = 550, height = 730 }
 
 # Layer rules (see docs/user/layer-rules.md) ---------------------------
 

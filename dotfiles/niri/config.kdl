@@ -1,7 +1,7 @@
 input {
   keyboard {
     xkb {
-
+      options "altwin:menu_win,ctrl:lctrl_rctrl"
     }
   }
   touchpad {
@@ -39,6 +39,9 @@ layout {
     off
   }
 }
+spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
+spawn-at-startup "hypridle"
 spawn-at-startup "noctalia"
 // spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 // spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
@@ -53,8 +56,13 @@ animations {
 }
 cursor {
   xcursor-theme "macOS"
+<<<<<<< HEAD
  // Niko, Adwaita, macOS-White, macOS    
  xcursor-size 30
+=======
+  // Niko, Adwaita, macOS-White, macOS
+  xcursor-size 30
+>>>>>>> 945db7b (Update Dotfiles)
 }
 window-rule {
   match app-id="firefox$" title="^Picture-in-Picture$"
@@ -79,7 +87,7 @@ binds {
     show-hotkey-overlay
   }
   Mod+Q {
-    spawn "ghostty"
+    spawn "alacritty"
   }
   Mod+Space {
     spawn-sh "noctalia msg panel-toggle launcher"
@@ -91,19 +99,19 @@ binds {
     spawn-sh "nautilus"
   }
   Mod+C {
-    spawn "zed"
+    spawn "zeditor"
   }
   Mod+Z {
-    spawn "zed"
+    spawn "zeditor"
   }
   Mod+B {
-    spawn "helium-browser-bin"
+    spawn "helium-browser"
   }
   Mod+K {
     spawn "codium"
   }
   Mod+M {
-    spawn "gnome-system-monitor"
+    spawn "resources"
   }
   Alt+V {
     spawn-sh "flatpak run xyz.riothedev.emojify"
@@ -124,7 +132,7 @@ binds {
     spawn-sh "noctalia msg panel-toggle clipboard"
   }
   Super+Alt+L {
-    spawn "swaylock"
+    spawn-sh "loginctl lock-session"
   }
   Mod+A {
     focus-column-left

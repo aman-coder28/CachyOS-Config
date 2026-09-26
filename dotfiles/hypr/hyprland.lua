@@ -23,6 +23,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
 
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+
 	hl.exec_cmd("hyprpm reload -n")
 
 	hl.exec_cmd("hypridle")
@@ -67,6 +70,7 @@ hl.config({
 hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
+
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -252,7 +256,7 @@ hl.config({
 		kb_layout    = "us",
 		kb_variant   = "",
 		kb_model     = "",
-		kb_options   = "",
+		kb_options   = "ctrl:swap_lctrl_rctrl,altwin:menu_win",
 		kb_rules     = "",
 
 		follow_mouse = 1,
@@ -315,10 +319,11 @@ hl.bind("ALT + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C", window = "ac
 hl.bind("ALT + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V", window = "activewindow" }))
 hl.bind("ALT + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }))
 hl.bind("ALT + Z", hl.dsp.send_shortcut({ mods = "CTRL", key = "Z", window = "activewindow" }))
+hl.bind("ALT + A", hl.dsp.send_shortcut({ mods = "CTRL", key = "A", window = "activewindow" }))
 
 hl.bind(mainMod .. " + J", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
 
-hl.bind(mainMod .. "+ Y", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind(mainMod .. "+ ALT + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 hl.bind(mainMod .. " + A", hl.dsp.layout("move -col"))
 hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))
@@ -326,7 +331,7 @@ hl.bind(mainMod .. " + E", hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.layout("swapcol l"))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.layout("swapcol r"))
 -- Toggle ScrollOverview with SUPER+g
-hl.bind("SUPER + O", function()
+hl.bind(mainMod .. " + O", function()
 	hl.plugin.scrolloverview.overview("toggle all")
 end)
 
@@ -415,6 +420,43 @@ hl.window_rule({
 	move  = "20 monitor_h-120",
 	float = true,
 })
+
+hl.window_rule({
+	name = "helium",
+	match = {
+		class = "helium",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
+	name = "ghostty",
+	match = {
+		class = "com.mitchellh.ghostty",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
+	name = "zed",
+	match = {
+		class = "dev.zed.Zed",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
+	name = "Nautilus",
+	match = {
+		class = "org.gnome.Nautilus",
+	},
+	maximize = true,
+	float = false,
+})
+
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

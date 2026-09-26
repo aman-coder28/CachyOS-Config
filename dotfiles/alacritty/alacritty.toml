@@ -1,4 +1,12 @@
+[window]
+padding = { x = 12, y = 12 }
+decorations = "Full"
+
+[font]
+normal = { family = "JetBrains Mono", style = "Light" }
+size = 12
+
 [general]
 import = [
-    "~/.config/alacritty/themes/noctalia.toml"
+  "~/.config/alacritty/themes/noctalia.toml"
 ]
