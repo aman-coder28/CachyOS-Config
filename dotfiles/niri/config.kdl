@@ -43,8 +43,7 @@ spawn-at-startup "noctalia"
 // spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 // spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-at-startup "xwayland-satellite"
-spawn-sh-at-startup "sleep 4 && qs -c angular-frame"
-spawn-sh-at-startup "qs -c music-island"
+spawn-sh-at-startup "sleep 2 && qs -c angular-frame"
 hotkey-overlay {
   skip-at-startup
 }
@@ -54,7 +53,8 @@ animations {
 }
 cursor {
   xcursor-theme "macOS"
- // Niko, Adwaita, macOS-White, macOS    xcursor-size 30
+ // Niko, Adwaita, macOS-White, macOS    
+ xcursor-size 30
 }
 window-rule {
   match app-id="firefox$" title="^Picture-in-Picture$"
