@@ -6,15 +6,17 @@
 # do not edit this field manually
 version = 1
 
+atuin-history = 1
+
 # override shell: "bash", "zsh", "fish", keep empty for auto detection
-shell = ""
+shell = "fish"
 
 # run the selected shell as a login shell
 shell-login = false
 
 # startup mode: "last", "spec", "history"
 # "last" = remember last mode used
-mode = "history"
+mode = "last"
 
 # enable debug logging
 debug = false
@@ -27,7 +29,7 @@ auto-execute = true
 
 # what navigate-up/navigate-down do while the menu is closed:
 # "history" = browse iris history, "shell" = leave the key to the shell (e.g. atuin)
-navigate-closed = "history"
+navigate-closed = "shell"
 
 [ui]
 # visual style: "modern" (icons, category pills, shortcut footer) or "classic" (minimalist, centered number, no icons)
@@ -76,7 +78,7 @@ auto-update = 0
 [zoxide]
 # also complete cd from zoxide's frecency database, not just the
 # children of the current directory (requires zoxide on PATH)
-extend-cd = true
+extend-cd = false
 
 [keybindings]
 toggle-mode = "ctrl+r"

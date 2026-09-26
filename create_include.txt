@@ -42,3 +42,6 @@ umbriel/
 
 environment.d/**
 environment.d/
+
+systemd/**
+systemd/

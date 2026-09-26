@@ -1,0 +1,6 @@
+[Unit]
+Description=Run backup everyday at 4 PM
+
+[Service]
+Type=oneshot
+ExecStart=/home/zeamanuel/CachyOS-Config/scripts/copy-dotfiles.sh
