@@ -7,12 +7,8 @@ input {
   touchpad {
     tap
   }
-  mouse {
-
-  }
-  trackpoint {
-
-  }
+  mouse { }
+  trackpoint { }
 }
 /-output "eDP-1" {
 mode "1366x768@60.012"
@@ -43,26 +39,19 @@ spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer
 spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'"
 spawn-at-startup "hypridle"
 spawn-at-startup "noctalia"
-// spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
-// spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "sleep 2 && qs -c angular-frame"
 hotkey-overlay {
   skip-at-startup
 }
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-animations {
-
-}
+animations { }
 cursor {
   xcursor-theme "macOS"
-<<<<<<< HEAD
- // Niko, Adwaita, macOS-White, macOS    
- xcursor-size 30
-=======
   // Niko, Adwaita, macOS-White, macOS
   xcursor-size 30
->>>>>>> 945db7b (Update Dotfiles)
 }
 window-rule {
   match app-id="firefox$" title="^Picture-in-Picture$"
@@ -87,7 +76,7 @@ binds {
     show-hotkey-overlay
   }
   Mod+Q {
-    spawn "alacritty"
+    spawn "ghostty"
   }
   Mod+Space {
     spawn-sh "noctalia msg panel-toggle launcher"
@@ -141,10 +130,10 @@ binds {
     focus-column-right
   }
   Mod+P {
-    spawn-sh "qs -c music-island"
+    spawn-sh "qs -c angular-frame"
   }
   Mod+Ctrl+P {
-    spawn-sh "qs -c music-island kill"
+    spawn-sh "qs -c angular-frame kill"
   }
   XF86AudioRaiseVolume allow-when-locked=true {
     spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
