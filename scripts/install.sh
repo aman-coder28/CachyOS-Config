@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "repository=https://repo.voiders.dev" | sudo tee /etc/xbps.d/voiders-dev-repo.conf
+echo "repository=https://mirror.black-hole.dev/x86_64/" | sudo tee /etc/xbps.d/hyprland.conf
+echo "repository=https://void.danklinux.com/dms/current" | sudo tee /etc/xbps.d/dms.conf
+echo "repository=https://void.danklinux.com/danklinux/current" | sudo tee /etc/xbps.d/danklinux.conf
+
 # Dev Tools Packages
 sudo xbps-install -S git \
  	github-cli \
@@ -30,6 +35,23 @@ sudo xbps-xbps-install -S ghostty \
  	amberol \
  	nwg-look \
  	pavucontrol
+
+# System Services and Core
+sudo xbsp-install -S linux-mainline \
+	linux-mainline-headers \
+	pipewire \
+	wireplumber \
+	NetworkManager \
+	network-manager-applet \
+	bluez \
+	blueman \
+	noto-fonts-ttf \
+	noto-fonts-cjk \
+	noto-fonts-emoji \
+	ttf-jetbrains-mono \
+	seatd \
+	greetd \
+	tuigreet
 
 # Windows Manager
 sudo xbps-install -S hyprland \

@@ -1,0 +1,20 @@
+description: System Services and Core
+
+packages:
+  - linux-mainline
+  - linux-mainline-headers
+  - pipewire
+  - wireplumber
+  - pipewire-pulse
+  - pipewire-alsa
+  - NetworkManager
+  - network-manager-applet
+  - bluez
+  - blueman
+  - noto-fonts-ttf
+  - noto-fonts-cjk
+  - noto-fonts-emoji
+  - ttf-jetbrains-mono
+  - seatd
+  - greetd
+  - tuigreet
