@@ -1,10 +1,13 @@
 [window]
 padding = { x = 12, y = 12 }
-decorations = "Full"
+decorations = "none"
 
 [font]
 normal = { family = "JetBrains Mono", style = "Light" }
 size = 12
+
+[cursor]
+style = {	shape = "Beam",	blinking = "On" }
 
 [general]
 import = [

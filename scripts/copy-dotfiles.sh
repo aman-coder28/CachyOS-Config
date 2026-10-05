@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-rsync -av --include-from=/home/zeamanuel/CachyOS-Config/create_include.txt --exclude='*' ~/.config/ ~/CachyOS-Config/dotfiles/
+rsync -av --include-from=/home/zeamanuel/Void-Linux-Config/create_include.txt --exclude='*' ~/.config/ ~/Void-Linux-Config/dotfiles/

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Dev Tools Packages
-sudo pacman -S git \
+sudo xbps-install -S git \
  	github-cli \
  	forgejo-cli \
  	go \
@@ -18,9 +18,9 @@ sudo pacman -S git \
  	npm
 
 # GUI Programs
-sudo pacman -S ghostty \
+sudo xbps-xbps-install -S ghostty \
  	kdeconnect \
- 	helium-browser-bin \
+ 	helium-browser \
  	zed \
  	gparted \
  	codium \
@@ -32,15 +32,12 @@ sudo pacman -S ghostty \
  	pavucontrol
 
 # Windows Manager
-sudo pacman -S hyprland \
+sudo xbps-install -S hyprland \
  	hyprpm \
  	hypridle \
  	hyprland-qt-support \
  	hyprpicker \
  	xdg-desktop-portal-hyprland \
- 	qgnomeplatform-qt5 \
- 	qgnomeplatform-qt6 \
- 	qt6-qtwayland-adwaita-decoration \
  	quickshell \
  	cava \
  	noctalia \
@@ -84,4 +81,4 @@ flatpak install -y flathub ai.opencode.opencode \
  	com.transmissionbt.Transmission \
  	org.libreoffice.LibreOffice
 
-cp -rn ~/home/zeamanuel/CachyOS-Config/dotfiles/* ~/.config/
+cp -rn ~/home/zeamanuel/Void-Linux-Config/dotfiles/* ~/.config/

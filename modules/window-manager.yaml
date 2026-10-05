@@ -7,9 +7,6 @@ packages:
   - hyprland-qt-support
   - hyprpicker
   - xdg-desktop-portal-hyprland
-  - qgnomeplatform-qt5
-  - qgnomeplatform-qt6
-  - qt6-qtwayland-adwaita-decoration
   - quickshell
   - cava
   - noctalia

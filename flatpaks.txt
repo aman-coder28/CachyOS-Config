@@ -1,38 +1,41 @@
 OpenCode	ai.opencode.opencode	1.18.8	stable	system
 Authenticator	com.belmoussaoui.Authenticator	4.6.2	stable	system
-Brave	com.brave.Browser	1.95.102	stable	system
-Discord	com.discordapp.Discord	1.0.158	stable	system
+Brave	com.brave.Browser	1.96.60	stable	system
+Discord	com.discordapp.Discord	1.0.160	stable	system
 Gapless	com.github.neithern.g4music	4.6.2	stable	system
 Flatseal	com.github.tchx84.Flatseal	2.4.1	stable	system
 Extension Manager	com.mattjakeman.ExtensionManager	0.6.5	stable	system
-Proton VPN	com.protonvpn.www	4.18.1	stable	system
-Transmission	com.transmissionbt.Transmission	4.1.2	stable	system
+Transmission	com.transmissionbt.Transmission	4.1.3	stable	system
 ProtonPlus	com.vysp3r.ProtonPlus	0.6.8	stable	system
-Varia	io.github.giantpinkrobots.varia	v2026.8.5-1	stable	system
-Bazaar	io.github.kolunmi.Bazaar	0.9.5	stable	system
-PeaZip	io.github.peazip.PeaZip	11.2.0	stable	system
+Amberol	io.bassi.Amberol	2026.1	stable	system
+Bazaar	io.github.kolunmi.Bazaar	0.9.6	stable	system
+PeaZip	io.github.peazip.PeaZip	11.3.0	stable	system
 peazip i386 addon	io.github.peazip.PeaZip.Addon.i386	1.0.0	stable	system
 GDM Settings	io.github.realmazharhussain.GdmSettings	5.0	stable	system
-Proton Pass	me.proton.Pass	1.40.2	stable	system
+Proton Pass	me.proton.Pass	1.41.1	stable	system
 Resources	net.nokyan.Resources	1.10.2	stable	system
 Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-25.08.17	25.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-26.08.2	26.08	system
 Mesa	org.freedesktop.Platform.GL.default	26.2.2	25.08	system
 Mesa (Extra)	org.freedesktop.Platform.GL.default	26.2.2	25.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	26.2.2	26.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	26.2.2	26.08-extra	system
 Intel VAAPI driver	org.freedesktop.Platform.VAAPI.Intel		25.08	system
+Intel VAAPI driver	org.freedesktop.Platform.VAAPI.Intel		26.08	system
 Codecs Extra Extension	org.freedesktop.Platform.codecs-extra		25.08-extra	system
+Codecs Extra Extension	org.freedesktop.Platform.codecs-extra		26.08-extra	system
 Extensions	org.gnome.Extensions	50.0	stable	system
 Geary	org.gnome.Geary	46.0	stable	system
-Mahjongg	org.gnome.Mahjongg	49.1.1	stable	system
+Mahjongg	org.gnome.Mahjongg	51.1	stable	system
 GNOME Application Platform version 49	org.gnome.Platform		49	system
 GNOME Application Platform version 50	org.gnome.Platform		50	system
-Solitaire	org.gnome.gitlab.wwarner.Solitaire	50.3	stable	system
-adw-gtk3 GTK Theme	org.gtk.Gtk3theme.adw-gtk3-dark	6.5	3.22	system
+GNOME Application Platform version 51	org.gnome.Platform		51	system
+Solitaire	org.gnome.gitlab.wwarner.Solitaire	51.0	stable	system
 Adwaita theme	org.kde.KStyle.Adwaita		5.15-25.08	system
 Adwaita theme	org.kde.KStyle.Adwaita		6.10	system
 KDE Application Platform	org.kde.Platform		5.15-25.08	system
 KDE Application Platform	org.kde.Platform		6.10	system
-QAdwaitaDecorations	org.kde.WaylandDecoration.QAdwaitaDecorations		5.15-25.08	system
-LibreOffice	org.libreoffice.LibreOffice	26.8.0.3	stable	system
+LibreOffice	org.libreoffice.LibreOffice	26.8.1.1	stable	system
 LocalSend	org.localsend.localsend_app	1.18.2	stable	system
 Volume Control	org.pulseaudio.pavucontrol	6.1	stable	system
 VLC	org.videolan.VLC	3.0.23	stable	system

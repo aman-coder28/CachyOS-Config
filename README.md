@@ -1,12 +1,12 @@
-# CachyOS-Config
+# Void-Linux-Config
 
-A [CachyOS](https://cachyos.org) packages definition and installation template that installs [Hyprland](https://github.com/hyprwm/Hyprland) tiling Wayland compositor, GUI programs, and Dev tools.
+A [Void Linux](https://voidlinux.org/) packages definition and installation template that installs [Hyprland](https://github.com/hyprwm/Hyprland) tiling Wayland compositor, GUI programs, and Dev tools.
 
 The project is built and maintained with [**bootc-yaml**](https://gitlab.com/beaman-coder/bootc-yaml) — a config CLI that describes the package sets in YAML config files and generates the install script instead of hand-writing it.
 
 ## Overview
 
-- **Base image:** CachyOS
+- **Base image:** Void Linux
 - **Compositor:** Hyprland window manager with Noctalia Shell, supporting tooling (`xwayland-satellite`, `nwg-look`, `alacritty`, `grim`, `slurp`, `swappy`, ...)
 - **GUI programs:** Ghostty, KDE Connect, Zed, VSCodium, gparted, and more
 - **Flatpaks:** Brave, Discord, LibreOffice, VLC, LocalSend, and more
@@ -16,7 +16,7 @@ The project is built and maintained with [**bootc-yaml**](https://gitlab.com/bea
 ## Project Structure
 
 ```
-CachyOS-Config/
+Void-Linux-Config/
 ├── config.yaml              # Image name, base image, default options
 ├── modules/                 # One YAML per package group (source of truth)
 │   ├── programs.yaml        # GUI Programs
@@ -50,7 +50,7 @@ bootc-yaml init my-image
 # 2. Regenerate the install script
 bootc-yaml gen my-image --mode=shell
 
-# 3. Install packages, Flatpaks, and dotfiles on CachyOS
+# 3. Install packages, Flatpaks, and dotfiles on Void Linux
 cd my-image
 chmod +x scripts/install.sh
 ./scripts/install.sh

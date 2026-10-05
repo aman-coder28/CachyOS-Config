@@ -3,10 +3,10 @@ description: GUI Programs
 packages:
   - ghostty
   - kdeconnect
-  - helium-browser-bin
+  - helium-browser
   - zed
   - gparted
-  - codium
+  - vscode
   - btop
   - gpu-screen-recorder
   - gpu-screen-recorder-ui

@@ -1,13 +1,14 @@
 zoxide init fish | source
 starship init fish | source
 atuin init fish | source
-# iris init fish | source
 
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+fish_add_path ~/.local/state/nix/profiles/profile/bin
+fish_add_path ~/.nix-profile/bin
 
-# pnpm
-set -gx PNPM_HOME "/home/zeamanuel/.local/share/pnpm"
-if not string match -q -- "$PNPM_HOME/bin" $PATH
-  set -gx PATH "$PNPM_HOME/bin" $PATH
+if status is-interactive
+   # Commands to run in interactive sessions can go here
 end
-# pnpm end
+
+mise activate fish | source
+set -gx PATH $PATH /usr/lib/qt6/bin
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"

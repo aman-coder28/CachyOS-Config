@@ -20,20 +20,23 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("pipewire")
+	hl.exec_cmd("pipewire-pulse")
+	hl.exec_cmd("wireplumber")
+	hl.exec_cmd("sleep 3 && qs -c angular-frame")
+
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
 
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
-	hl.exec_cmd("hyprpm reload -n")
+	-- hl.exec_cmd("hyprpm reload -n")
 
 	hl.exec_cmd("hypridle")
-	hl.exec_cmd("noctalia")
-	hl.exec_cmd("sleep 2 && qs -c angular-frame")
 
-	-- hl.exec_cmd("wl-paste --type text --watch cliphist store")
-	-- hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("/home/linuxbrew/.linuxbrew/bin/kitty --single-instance --class kitty-prewarm")
 end)
 
 -------------------------------
@@ -51,7 +54,7 @@ hl.env("HYPRCURSOR_SIZE", "30")
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
 hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
-hl.env("QT_WAYLAND_DECORATION", "adwaita")
+-- hl.env("QT_WAYLAND_DECORATION", "adwaita")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -218,23 +221,23 @@ hl.config({
 	},
 })
 
-hl.config({
-	plugin = {
-		scrolloverview = {
-			gesture_distance = 100,
-			scale = 0.6,
-			workspace_gap = 20,
-			layout = "vertical",
-			wallpaper = 2,
-			blur = true,
+-- hl.config({
+-- plugin = {
+-- scrolloverview = {
+-- gesture_distance = 100,
+-- scale = 0.6,
+-- workspace_gap = 20,
+-- layout = "vertical",
+-- wallpaper = 2,
+-- blur = true,
 
-			shadow = {
-				enabled = true,
-				range = 20,
-			},
-		},
-	},
-})
+-- shadow = {
+-- enabled = true,
+-- range = 20,
+-- },
+-- },
+-- },
+-- })
 
 ----------------
 ----  MISC  ----
@@ -288,14 +291,15 @@ hl.device({
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("ghostty"))
+hl.bind(mainMod .. " + Q",
+	hl.dsp.exec_cmd("/home/linuxbrew/.linuxbrew/bin/kitty --single-instance"))
 hl.bind(mainMod .. " + X", hl.dsp.window.close())
 hl.bind(mainMod .. " + U",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("nautilus"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zeditor"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zed"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("kdeconnect-app"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("flatpak run org.libreoffice.LibreOffice"))
@@ -303,23 +307,18 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("gnome-text-editor"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("flatpak run io.bassi.Amberol"))
-hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("resources"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("amberol"))
+hl.bind("ALT + M", hl.dsp.exec_cmd("gnome-system-monitor"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c angular-frame"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("qs -c angular-frame kill"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("pkill qs"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
-
-hl.bind("ALT + S", hl.dsp.send_shortcut({ mods = "CTRL", key = "S", window = "activewindow" }))
-hl.bind("ALT + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C", window = "activewindow" }))
-hl.bind("ALT + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V", window = "activewindow" }))
-hl.bind("ALT + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }))
-hl.bind("ALT + Z", hl.dsp.send_shortcut({ mods = "CTRL", key = "Z", window = "activewindow" }))
-hl.bind("ALT + A", hl.dsp.send_shortcut({ mods = "CTRL", key = "A", window = "activewindow" }))
 
 hl.bind(mainMod .. " + J", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
 
@@ -330,13 +329,13 @@ hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + E", hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.layout("swapcol l"))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.layout("swapcol r"))
--- Toggle ScrollOverview with SUPER+g
+
 hl.bind(mainMod .. " + O", function()
 	hl.plugin.scrolloverview.overview("toggle all")
 end)
 
 hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -362,8 +361,9 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 	{ locked = true, repeating = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("noctalia msg brightness-up 10%"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down 10%"),
+	{ locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -422,6 +422,30 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name      = "kitty-prewarm",
+	match     = { class = "^(kitty-prewarm)$" },
+	workspace = "special:kitty silent",
+})
+
+hl.window_rule({
+	name = "kitty",
+	match = {
+		class = "kitty",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
+	name = "ghostty",
+	match = {
+		class = "com.mitchellh.ghostty",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
 	name = "helium",
 	match = {
 		class = "helium",
@@ -457,6 +481,16 @@ hl.window_rule({
 	float = false,
 })
 
+hl.window_rule({
+	name = "Kde Connect Daemon",
+	match = {
+		class = "org.kde.kdeconnect.daemon",
+	},
+	maximize = false,
+	float = true,
+	size = "577, 194",
+	move = "377, 297"
+})
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
