@@ -220,23 +220,23 @@ hl.config({
 	},
 })
 
--- hl.config({
--- plugin = {
--- scrolloverview = {
--- gesture_distance = 100,
--- scale = 0.6,
--- workspace_gap = 20,
--- layout = "vertical",
--- wallpaper = 2,
--- blur = true,
+hl.config({
+	plugin = {
+		scrolloverview = {
+			gesture_distance = 100,
+			scale = 0.6,
+			workspace_gap = 20,
+			layout = "vertical",
+			wallpaper = 2,
+			blur = true,
 
--- shadow = {
--- enabled = true,
--- range = 20,
--- },
--- },
--- },
--- })
+			shadow = {
+				enabled = true,
+				range = 20,
+			},
+		},
+	},
+})
 
 ----------------
 ----  MISC  ----
@@ -311,10 +311,8 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("resources"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
-hl.bind("ALT + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c angular-frame"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("pkill qs"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("qs -c angular-frame kill"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
@@ -335,13 +333,13 @@ hl.bind(mainMod .. " + D", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + E", hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.layout("swapcol l"))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.layout("swapcol r"))
-
+-- Toggle ScrollOverview with SUPER+g
 hl.bind(mainMod .. " + O", function()
 	hl.plugin.scrolloverview.overview("toggle all")
 end)
 
 hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/shot-$(date +%Y%m%d-%H%M%S).jpg"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]

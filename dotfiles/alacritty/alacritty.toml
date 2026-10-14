@@ -7,15 +7,11 @@ normal = { family = "JetBrains Mono", style = "Light" }
 size = 12
 
 [cursor]
-<<<<<<< HEAD
-style = {	shape = "Beam",	blinking = "On" }
-=======
   style = {
     shape = "Beam",  # Options: Block, Underline, Beam
     blinking = "Always"
   }
   thickness = 0.15
->>>>>>> 3c5eac2 (update dotfiles)
 
 [general]
 import = [
