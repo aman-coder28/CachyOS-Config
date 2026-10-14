@@ -47,27 +47,27 @@ type = "nightlight"
 
 [desktop_widgets]
 schema_version = 2
-widget_order = []
+widget_order = ["desktop-widget-0000000000000001"]
 
-    [desktop_widgets.grid]
-    cell_size = 8
-    major_interval = 4
-    visible = true
+[desktop_widgets.grid]
+cell_size = 8
+major_interval = 4
+visible = true
 
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 168.0
-    box_width = 200.0
-    cx = 1259.0
-    cy = 124.0
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "weather"
+[desktop_widgets.widget.desktop-widget-0000000000000001]
+box_height = 168.0
+box_width = 200.0
+cx = 1259.0
+cy = 124.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "weather"
 
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        background_padding = 20
-        show_forecast = true
+[desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+background_padding = 20
+show_forecast = true
 
 [dock]
 auto_hide = true
@@ -103,11 +103,10 @@ enabled = false
 enabled = true
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@eDP-1",
-    "lockscreen-login-box@WL-1",
-    "lockscreen-login-box@winit",
-    "lockscreen-login-box@eeDP-1",
-    "lockscreen-widget-0000000000000001"
+  "lockscreen-login-box@WL-1",
+  "lockscreen-login-box@winit",
+  "lockscreen-login-box@eDP-1",
+  "lockscreen-widget-0000000000000001",
 ]
 
     [lockscreen_widgets.grid]
@@ -142,32 +141,32 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 683.0
-    cy = 586.0
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+box_height = 196.0
+box_width = 810.0
+cx = 683.0
+cy = 586.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "login_box"
 
-        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eeDP-1"]
     box_height = 196.0
@@ -196,16 +195,16 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 679.0
-    cy = 522.0
-    output = "winit"
-    placement_height = 704.0
-    placement_width = 1358.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+box_height = 128.0
+box_width = 320.0
+cx = 699.0
+cy = 192.0
+output = "eDP-1"
+placement_height = 768.0
+placement_width = 1366.0
+rotation = 0.0
+type = "clock"
 
         [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
         background_color = "surface_variant"
@@ -308,11 +307,8 @@ directory = "/home/zeamanuel/Pictures/Wallpapers"
     [wallpaper.last]
     path = "/home/zeamanuel/Pictures/Wallpapers/fairy-tale-light.jpg"
 
-    [wallpaper.monitors.eDP-1]
-    path = "/home/zeamanuel/Pictures/Wallpapers/fairy-tale-light.jpg"
-
-    [wallpaper.monitors.eeDP-1]
-    path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
+[wallpaper.monitors.eDP-1]
+path = "/home/zeaman/Pictures/Wallpapers/fairy-tale-dark.webp"
 
 [widget.active_window]
 anchor = true
@@ -360,3 +356,11 @@ show_label = false
 
 [widget.widget]
 type = "oldirtty/color_picker:widget"
+
+[theme.templates.user.quickshell]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/quickshell-colors.json"
+output_path = "$XDG_CONFIG_HOME/quickshell/noctalia-colors.json"
+
+[theme.templates.user.strata]
+input_path = "~/.config/noctalia/templates/strata.toml"
+output_path = "~/.config/strata/themes/noctalia.toml"

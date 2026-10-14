@@ -10,8 +10,8 @@
 	"hard_tabs": true,
 	"tab_size": 2,
 	"icon_theme": {
-		"mode": "light",
-		"light": "VSCode Great Icons Theme",
+		"mode": "dark",
+		"light": "VSCode Icons for Zed (Dark)",
 		"dark": "VSCode Icons for Zed (Dark)",
 	},
 	"disable_ai": true,
@@ -59,6 +59,12 @@
 					"fmt.configPath": null,
 					"run": "onSave",
 				},
+			},
+		},
+		"clangd": {
+			"binary": {
+				"path": "/usr/bin/clangd",
+				"arguments": ["--experimental-modules-support"],
 			},
 		},
 	},

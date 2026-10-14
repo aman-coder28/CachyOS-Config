@@ -20,23 +20,22 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia")
 	hl.exec_cmd("pipewire")
-	hl.exec_cmd("pipewire-pulse")
 	hl.exec_cmd("wireplumber")
-	hl.exec_cmd("sleep 3 && qs -c angular-frame")
-
+	hl.exec_cmd("pipewire-pulse")
+	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("sleep 3 && qs -c angular-frame")
+
 
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
-	-- hl.exec_cmd("hyprpm reload -n")
-
+	hl.exec_cmd("hyprpm reload -n")
 	hl.exec_cmd("hypridle")
-
-	hl.exec_cmd("/home/linuxbrew/.linuxbrew/bin/kitty --single-instance --class kitty-prewarm")
+	hl.exec_cmd("kitty --single-instance --class kitty-prewarm")
 end)
 
 -------------------------------
@@ -82,7 +81,7 @@ hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 hl.config({
 	general = {
 		gaps_in          = 2,
-		gaps_out         = 2,
+		gaps_out         = 3,
 		border_size      = 0,
 
 		col              = {
@@ -100,7 +99,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding         = 10,
+		rounding         = 8,
 		rounding_power   = 2,
 
 		-- Change transparency of focused and unfocused windows
@@ -259,7 +258,7 @@ hl.config({
 		kb_layout    = "us",
 		kb_variant   = "",
 		kb_model     = "",
-		kb_options   = "ctrl:swap_lctrl_rctrl,altwin:menu_win",
+		kb_options   = "altwin:menu_win",
 		kb_rules     = "",
 
 		follow_mouse = 1,
@@ -291,24 +290,24 @@ hl.device({
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + Q",
-	hl.dsp.exec_cmd("/home/linuxbrew/.linuxbrew/bin/kitty --single-instance"))
+-- hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("alacritty"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty --single-instance"))
 hl.bind(mainMod .. " + X", hl.dsp.window.close())
 hl.bind(mainMod .. " + U",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("nautilus"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zed"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium"))
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("/home/zeamanuel/.local/bin/strata"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("zeditor"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium-browser"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("kdeconnect-app"))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("flatpak run xyz.riothedev.emojify"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("flatpak run org.libreoffice.LibreOffice"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("emojify"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("libreoffice"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("gnome-text-editor"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("amberol"))
-hl.bind("ALT + M", hl.dsp.exec_cmd("gnome-system-monitor"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("resources"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
@@ -319,6 +318,13 @@ hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("pkill qs"))
 
 hl.bind(mainMod .. " + right", hl.dsp.layout("move +col"))
 hl.bind(mainMod .. " + left", hl.dsp.layout("move -col"))
+
+-- hl.bind("ALT + S", hl.dsp.send_shortcut({ mods = "CTRL", key = "S", window = "activewindow" }))
+-- hl.bind("ALT + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C", window = "activewindow" }))
+-- hl.bind("ALT + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V", window = "activewindow" }))
+-- hl.bind("ALT + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X", window = "activewindow" }))
+-- hl.bind("ALT + Z", hl.dsp.send_shortcut({ mods = "CTRL", key = "Z", window = "activewindow" }))
+-- hl.bind("ALT + A", hl.dsp.send_shortcut({ mods = "CTRL", key = "A", window = "activewindow" }))
 
 hl.bind(mainMod .. " + J", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware = true }))
 
@@ -361,9 +367,8 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 	{ locked = true, repeating = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("noctalia msg brightness-up 10%"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down 10%"),
-	{ locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("noctalia msg brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("noctalia msg brightness-down"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -428,27 +433,18 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "kitty",
-	match = {
-		class = "kitty",
-	},
-	maximize = true,
-	float = false,
-})
-
-hl.window_rule({
-	name = "ghostty",
-	match = {
-		class = "com.mitchellh.ghostty",
-	},
-	maximize = true,
-	float = false,
-})
-
-hl.window_rule({
 	name = "helium",
 	match = {
 		class = "helium",
+	},
+	maximize = true,
+	float = false,
+})
+
+hl.window_rule({
+	name = "kitty",
+	match = {
+		class = "kitty",
 	},
 	maximize = true,
 	float = false,
